@@ -6,3 +6,33 @@
 </ul>
 <%= link_to "Retour à la liste de minous", minous_path %>
 
+<br>
+
+<!-- Affichage des locations du minou -->
+<h1>Locations du minous</h1>
+<% @rentals.each do |rental| %>
+<ul>
+  <li> Début : <%= rental.begin_date %> | Fin : <%= rental.end_date %> | Price : <%= rental.rental_price %>
+  </li>
+</ul>
+<% end %>
+
+<br>
+
+<!-- Formulaire de location -->
+<h1>Formulaire de location</h1>
+
+<%= simple_form_for [@minou, @rental] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :begin_date %>
+    <%= f.input :end_date %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+
