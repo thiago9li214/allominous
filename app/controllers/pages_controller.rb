@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def dashboard
+  def minouboard
+    @minous = Minou.where(user_id: current_user)
   end
 end

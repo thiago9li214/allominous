@@ -1,1 +1,13 @@
-<h1>Bienvenue sur votre minouboard</h1>
+<div class="container">
+  <h1>Mon minouboard</h1>
+  <div class="row">
+    <% @minous.each do |minou| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= minou.name %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
