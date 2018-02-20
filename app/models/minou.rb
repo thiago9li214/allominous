@@ -1,5 +1,6 @@
 class Minou < ApplicationRecord
   belongs_to :user
+  mount_uploader :photo, PhotoUploader
 
   # Species and personalities definition
   SIZES         = %w(petit moyen grand)
