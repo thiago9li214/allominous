@@ -8,6 +8,8 @@ class MinousController < ApplicationController
 
   def show
     @minou = Minou.find(params[:id])
+    @rental = Rental.new
+    @rentals = Rental.where(minou: @minou)
   end
 
   def new
