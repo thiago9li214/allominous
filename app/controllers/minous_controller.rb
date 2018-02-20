@@ -1,9 +1,11 @@
 class MinousController < ApplicationController
   before_action :set_minou, only: [:show, :edit, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_after_action :verify_authorized, only: :show
 
 
   def index
-    @minous = Minou.all
+    @minous = policy_scope(Minou).order(created_at: :desc)
   end
 
   def show
@@ -14,6 +16,7 @@ class MinousController < ApplicationController
 
   def new
     @minou = Minou.new
+    authorize @minou
   end
 
   def create
@@ -24,9 +27,15 @@ class MinousController < ApplicationController
     else
       render :new
     end
+    authorize @minou
   end
 
   def edit
+    authorize @minou
+  end
+
+  def update
+    authorize @minou
   end
 
   def destroy
