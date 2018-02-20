@@ -27,7 +27,7 @@ minous_attributes = [
     age:          1,
     personality:  'espiègle',
     description:  'Il est le futur roi du royaume animal.',
-        daily_price:  5,
+    daily_price:  6,
     user_id:      1
   },
   {
@@ -37,7 +37,7 @@ minous_attributes = [
     age:          9,
     personality:  'sournois',
     description:  'Il aime pas trop Mowgli. Ni Baloo. Ni Baghera.',
-        daily_price:  5,
+    daily_price:  7,
     user_id:      1
   },
   {
@@ -47,7 +47,7 @@ minous_attributes = [
     age:          6,
     personality:  'susceptible',
     description:  'Il botterait bien les fesses de Jerry.',
-        daily_price:  5,
+    daily_price:  8,
     user_id:      1
   },
   {
@@ -57,13 +57,10 @@ minous_attributes = [
     age:          3,
     personality:  'grumpy',
     description:  'Carrément méchant, jamais content.',
-        daily_price:  5,
+    daily_price:  9,
     user_id:      1
   },
 ]
 Minou.create!(minous_attributes)
 puts 'Finished!'
-
-
-
 
