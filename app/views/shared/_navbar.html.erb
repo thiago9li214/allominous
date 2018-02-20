@@ -40,9 +40,14 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-minou-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to "Partager mon minou", new_minou_path %></li>
+        <li><%= link_to "Minouboard", minouboard_path %></li>
+        <li><%= link_to "Profil", edit_user_registration_path %></li>
+        <li><%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+        </li>
+
       </ul>
     </div>
   </div>
