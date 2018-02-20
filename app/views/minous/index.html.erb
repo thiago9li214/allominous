@@ -1,35 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1>Liste des minous</h1>
 
-<h1>Minous</h1>
+<% @minous.each do |minou| %>
+<ul>
+  <li> Nom : <%= minou.name %> | Espèce : <%= minou.specie %> | Personnalité : <%= minou.personality %> |
+    <%= link_to "Voir le minou", minou_path(minou) %> | <%= link_to "Minoupause", minou, method: :delete, data: { confirm: 'Are you sure?'} %>
+  </li>
+</ul>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Size</th>
-      <th>Specie</th>
-      <th>Personality</th>
-      <th>Age</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= link_to 'Ajoute un minou', new_minou_path %>
 
-  <tbody>
-    <% @minous.each do |minou| %>
-      <tr>
-        <td><%= minou.name %></td>
-        <td><%= minou.size %></td>
-        <td><%= minou.specie %></td>
-        <td><%= minou.personality %></td>
-        <td><%= minou.age %></td>
-        <td><%= link_to 'Show', minou %></td>
-        <td><%= link_to 'Edit', edit_minou_path(minou) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-
-</table>
-
-<br>
-
-<%= link_to 'New minou', new_minou_path %>
