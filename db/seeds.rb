@@ -17,6 +17,7 @@ minous_attributes = [
     age:          4,
     personality:  'dragueur',
     description:  'Puss est un chat roux marchant sur ses deux pattes arrières, qui sont dans des bottes noires.',
+    daily_price:  5,
     user_id:      1
   },
   {
@@ -26,6 +27,7 @@ minous_attributes = [
     age:          1,
     personality:  'espiègle',
     description:  'Il est le futur roi du royaume animal.',
+    daily_price:  6,
     user_id:      1
   },
   {
@@ -35,7 +37,8 @@ minous_attributes = [
     age:          9,
     personality:  'sournois',
     description:  'Il aime pas trop Mowgli. Ni Baloo. Ni Baghera.',
-    user_id:      2
+    daily_price:  7,
+    user_id:      1
   },
   {
     name:         'Tom de Jerrys',
@@ -44,6 +47,7 @@ minous_attributes = [
     age:          6,
     personality:  'susceptible',
     description:  'Il botterait bien les fesses de Jerry.',
+    daily_price:  8,
     user_id:      1
   },
   {
@@ -53,6 +57,7 @@ minous_attributes = [
     age:          3,
     personality:  'grumpy',
     description:  'Carrément méchant, jamais content.',
+    daily_price:  9,
     user_id:      1
   },
 ]
