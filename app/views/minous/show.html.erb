@@ -1,2 +1,8 @@
-<h1>Minous#show</h1>
-<p>Find me in app/views/minous/show.html.erb</p>
+<h1><%= @minou.name %></h1>
+
+<ul>
+  <li> Espèce : <%= @minou.specie %> </li>
+  <li> Personnalité : <%= @minou.personality %> </li>
+</ul>
+<%= link_to "Retour à la liste de minous", minous_path %>
+

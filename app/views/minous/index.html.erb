@@ -1,2 +1,9 @@
-<h1>Minous#index</h1>
-<p>Find me in app/views/minous/index.html.erb</p>
+<h1>Liste des minous</h1>
+
+<% @minous.each do |minou| %>
+<ul>
+  <li> Nom : <%= minou.name %> | Espèce : <%= minou.specie %> | Personnalité : <%= minou.personality %> |
+    <%= link_to "Voir le minou", minou_path(minou) %>
+  </li>
+</ul>
+<% end %>
