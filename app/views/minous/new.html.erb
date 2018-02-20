@@ -1,2 +1,5 @@
-<h1>Minous#new</h1>
-<p>Find me in app/views/minous/new.html.erb</p>
+<h1>Nouveau Minou</h1>
+
+<%= render 'form', minou: @minou %>
+
+<%= link_to 'Back', minous_path %>

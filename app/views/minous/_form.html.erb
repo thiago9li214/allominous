@@ -1,0 +1,17 @@
+<%= simple_form_for(@minou) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :size, collection: ["petit", "moyen", "grand"] %>
+    <%= f.input :specie, collection: ["chat", "lion", "tigre", "lynx", "panthère"] %>
+    <%= f.input :age %>
+    <%= f.input :personality, collection: ["grumpy", "susceptible", "sournois", "espiègle", "têtu", "simplet", "dragueur", "calin"] %>
+    <%= f.input :description %>
+    <%= f.input :daily_price %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

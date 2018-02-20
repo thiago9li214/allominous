@@ -3,7 +3,10 @@
 <% @minous.each do |minou| %>
 <ul>
   <li> Nom : <%= minou.name %> | Espèce : <%= minou.specie %> | Personnalité : <%= minou.personality %> |
-    <%= link_to "Voir le minou", minou_path(minou) %>
+    <%= link_to "Voir le minou", minou_path(minou) %> | <%= link_to "Minoupause", minou, method: :delete, data: { confirm: 'Are you sure?'} %>
   </li>
 </ul>
 <% end %>
+
+<%= link_to 'Ajoute un minou', new_minou_path %>
+
