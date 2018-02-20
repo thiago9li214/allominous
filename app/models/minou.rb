@@ -4,7 +4,7 @@ class Minou < ApplicationRecord
   # Species and personalities definition
   SIZES         = %w(petit moyen grand)
   SPECIES       = %w(chat lion tigre lynx panthère)
-  PERSONALITIES = %w(grumpy susceptible sournois espiègle têtu simplet calin)
+  PERSONALITIES = %w(grumpy susceptible sournois espiègle têtu simplet dragueur calin)
 
   # Validations
   validates :name,          presence: true,   uniqueness: true
