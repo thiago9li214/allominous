@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def minouboard
-    @minous = Minou.where(user_id: current_user)
+    @minous = current_user.minous
+    @rentals = current_user.rentals
   end
 end
