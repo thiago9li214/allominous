@@ -1,5 +1,5 @@
 class MinousController < ApplicationController
-  before_action :set_minou, only: [:show, :edit, :destroy]
+  before_action :set_minou, only: [:show, :edit, :destroy, :update]
 
 
   def index
@@ -27,6 +27,11 @@ class MinousController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    @minou.update(minou_params)
+    redirect_to minous_path
   end
 
   def destroy
