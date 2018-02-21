@@ -15,51 +15,51 @@ puts 'Creating users...'
 
 # User 1
 url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/g_face,c_thumb,w_200,h_200/v1519223923/plage_copie.jpg'
-user = User.new( {
+user1 = User.new( {
     first_name:  'MinouLover',
     last_name:   'KatFan',
     email:       'minous@gmail.com',
     password: 'azerty',
     address:      'Paris'
   } )
-user.remote_photo_url = url
-user.save!
+user1.remote_photo_url = url
+user1.save!
 
 # User 2
 url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/g_face,c_thumb,w_200,h_200/v1519223922/e%CC%81pe%CC%81e_copie.jpg'
-user = User.new( {
+user2 = User.new( {
     first_name:  'MinouLover',
     last_name:   'KatFan',
     email:       'minous2@gmail.com',
     password: 'azerty',
     address:      'Paris'
   } )
-user.remote_photo_url = url
-user.save!
+user2.remote_photo_url = url
+user2.save!
 
 # User 3
 url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/g_face,c_thumb,w_200,h_200/v1519223922/contrebois_copie.jpg'
-user = User.new( {
+user3 = User.new( {
     first_name:  'MinouLover',
     last_name:   'KatFan',
     email:       'minous3@gmail.com',
     password: 'azerty',
     address:      'Paris'
   } )
-user.remote_photo_url = url
-user.save!
+user3.remote_photo_url = url
+user3.save!
 
 # User 4
 url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519226474/man-with-blanket.jpg'
-user = User.new( {
+user4 = User.new( {
     first_name:  'MinouLover',
     last_name:   'KatFan',
     email:       'minous4@gmail.com',
     password: 'azerty',
     address:      'Paris'
   } )
-user.remote_photo_url = url
-user.save!
+user4.remote_photo_url = url
+user4.save!
 
 
 
@@ -147,7 +147,7 @@ minou = Minou.new({
     personality:  'dragueur',
     description:  'Puss est un chat roux marchant sur ses deux pattes arrières, qui sont dans des bottes noires.',
     daily_price:  5,
-    user_id:      1
+    user_id:      user1.id
   })
 minou.remote_photo_url = url
 minou.save!
@@ -162,7 +162,7 @@ minou = Minou.new({
     personality:  'espiègle',
     description:  'Il est le futur roi du royaume animal.',
     daily_price:  6,
-    user_id:      2
+    user_id:      user2.id
   })
 minou.remote_photo_url = url
 minou.save!
@@ -177,7 +177,7 @@ minou = Minou.new({
     personality:  'sournois',
     description:  'Il aime pas trop Mowgli. Ni Baloo. Ni Baghera.',
     daily_price:  7,
-    user_id:      3
+    user_id:      user3.id
   })
 minou.remote_photo_url = url
 minou.save!
@@ -192,7 +192,7 @@ minou = Minou.new({
     personality:  'grumpy',
     description:  'Carrément méchant, jamais content.',
     daily_price:  9,
-    user_id:      4
+    user_id:      user4.id
   })
 minou.remote_photo_url = url
 minou.save!
@@ -206,7 +206,7 @@ Minou.create({
     personality:  'susceptible',
     description:  'Il botterait bien les fesses de Jerry.',
     daily_price:  8,
-    user_id:      1
+    user_id:      user1.id
   })
 
 
@@ -218,7 +218,7 @@ Minou.create({
     personality:  'grumpy',
     description:  'Il botterait bien les fesses de Jerry.',
     daily_price:  8,
-    user_id:      1
+    user_id:      user1.id
   })
 
 Minou.create({
@@ -229,7 +229,7 @@ Minou.create({
     personality:  'susceptible',
     description:  'Il botterait bien les fesses de Jerry.',
     daily_price:  8,
-    user_id:      1
+    user_id:      user1.id
   })
 
 Minou.create({
@@ -240,7 +240,7 @@ Minou.create({
     personality:  'espiègle',
     description:  'Il botterait bien les fesses de Jerry.',
     daily_price:  8,
-    user_id:      1
+    user_id:      user1.id
   })
 
 
@@ -252,7 +252,7 @@ Minou.create({
     personality:  'susceptible',
     description:  'Il botterait bien les fesses de Jerry.',
     daily_price:  8,
-    user_id:      1
+    user_id:      user1.id
   })
 
 Minou.create({
@@ -263,7 +263,7 @@ Minou.create({
     personality:  'sournois',
     description:  'Il botterait bien les fesses de Jerry.',
     daily_price:  8,
-    user_id:      1
+    user_id:      user1.id
   })
 
 Minou.create({
@@ -274,7 +274,7 @@ Minou.create({
     personality:  'calin',
     description:  'Il botterait bien les fesses de Jerry.',
     daily_price:  8,
-    user_id:      1
+    user_id:      user1.id
   })
 
 
