@@ -21,7 +21,7 @@
 
       <div class="minou-form">
         <!-- current_user.photo a changer  -->
-        <%= cl_image_tag @minou.photo, height: 100, width: 100, crop: :fill, class: "avatar-form" %>
+        <%= cl_image_tag current_user.photo, height: 100, width: 100, crop: :fill, class: "avatar-form" %>
         <%= simple_form_for [@minou, @rental] do |f| %>
           <%= f.error_notification %>
 
