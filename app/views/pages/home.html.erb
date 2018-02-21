@@ -1,3 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "Voir tous les minous", minous_path %>
+
+<div class="banner">
+    <div class="banner-content">
+      <h1>Bienvenue sur  Allominou</h1>
+      <p>Accueillez un félin ne serait-ce qu'un temps</p>
+        <div class="rechercher-minou">
+          <%= link_to "Voir tous les minous", minous_path , class: "button-voir-minou btn btn-danger btn-lg" %>
+        </div>
+    </div>
+
+    <div class="banner-search">
+      <input type="text" class="form-control" placeholder="Où ça le minou">
+      <input type="text" class="form-control" placeholder="Quand ça le minou">
+      <%= link_to "Rechercher", minous_path , class: "button-search-minou btn btn-danger btn-lg" %>
+    </div>
+</div>
