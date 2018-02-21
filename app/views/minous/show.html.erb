@@ -1,3 +1,8 @@
+<% if @minou.photo? %>
+<%= cl_image_tag @minou.photo, height: 400, width: 400, crop: :fill %>
+<% end %>
+
+
 <h1><%= @minou.name %></h1>
 
 <ul>

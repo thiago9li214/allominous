@@ -17,14 +17,25 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-minou-item">
         <div class="dropdown">
-          <%= image_tag "http://i.pravatar.cc/300/", class: "avatar dropdown-toggle", id: "navbar-minou-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-minou-dropdown-menu">
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
+          <% if current_user.photo? %>
+            <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-minou-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-minou-dropdown-menu">
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          <% else %>
+            <%= image_tag "http://i.pravatar.cc/300/", class: "avatar dropdown-toggle", id: "navbar-minou-menu", "data-toggle" => "dropdown" %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-minou-dropdown-menu">
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          <% end %>
         </div>
       </div>
     <% else %>
