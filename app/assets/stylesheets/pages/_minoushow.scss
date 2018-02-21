@@ -6,18 +6,12 @@
 
 .mcontainer {
   max-width: 900px;
-  background-color: white;
+  background-color: $white;
 }
 
 .photo {
   margin-bottom: 10px;
 }
-
-h1, h2, h3 {
-  margin-top: 6px;
-  margin-bottom: 0px;
-}
-
 
 .minou-content {
   display: flex;
@@ -32,7 +26,7 @@ h1, h2, h3 {
   align-items: center;
   margin: 70px 10px;
   border-radius: 3px;
-  border: 1px solid lightgrey;
+  border: 1px solid $light-gray;
   padding: 80px 30px 30px 30px;
   position: relative;
 }
@@ -43,7 +37,7 @@ h1, h2, h3 {
   margin-bottom: 20px;
   position: absolute;
   top: -50px;
-  border: 4px solid lightgrey;
+  border: 4px solid $light-gray;
 }
 .minou-infos {
     // font-size: 14px;
