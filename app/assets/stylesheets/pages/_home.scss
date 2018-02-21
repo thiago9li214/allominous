@@ -4,7 +4,7 @@
     /* Transparent gradient above */
     linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%),
     /* Then image below */
-    url('minouhome2.jpg');
+    url('minouhome3.jpg');
   height: 90vh;
   background-size: cover;
   background-position: center;
@@ -29,12 +29,15 @@
 .banner-search {
   position: fixed;
   bottom: 0;
-  width: 75%;
+  width: 100%;
   height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding: 60px 200px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
+
 
 .button-voir-minou {
   margin: 20px;
@@ -43,5 +46,9 @@
 .button-search-minou {
   padding: 7px!important;
   font-size: 18px;
+}
+
+input {
+  margin-right: 5px;
 }
 
