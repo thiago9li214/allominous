@@ -42,7 +42,7 @@ class MinousController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def minou_params
-    params.require(:minou).permit(:name, :size, :specie, :age, :personality, :description, :daily_price)
+    params.require(:minou).permit(:name, :size, :specie, :age, :personality, :description, :daily_price, :photo)
   end
 
 end

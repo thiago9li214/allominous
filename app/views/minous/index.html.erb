@@ -3,19 +3,25 @@
   <div class="row">
     <% @minous.each do |minou| %>
       <%= link_to minou_path(minou) do %>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="card">
-            <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("https://source.unsplash.com/500x500/?kitten,<%=minou.name%>");'>
-              <h1 class="card_title"><%= minou.name %></h1>
-            </div>
-            <div class="card_content">
-              <p id="specie"><%= minou.specie %></p>
-              <p id="personality"><%= minou.personality %></p>
-              <p id="price"><%= minou.daily_price %> Kitokens par jour</p>
-            </div>
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="card">
+        <% if minou.photo? %>
+          <div class="card_body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('<%= cl_image_path minou.photo, height: 400, width: 400, crop: :fill %>')">
+            <h1 class="card_title"><%= minou.name %></h1>
           </div>
+          <% else %>
+          <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("https://source.unsplash.com/400x400/?kitten,<%=minou.name%>");'>
+            <h1 class="card_title"><%= minou.name %></h1>
+          </div>
+        <% end %>
+        <div class="card_content">
+          <p id="specie"><%= minou.specie %></p>
+          <p id="personality"><%= minou.personality %></p>
+          <p id="price"><%= minou.daily_price %> Kitokens par jour</p>
         </div>
-      <% end %>
+      </div>
+    </div>
+    <% end %>
     <% end %>
   </div>
 </div>
