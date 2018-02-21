@@ -1,0 +1,46 @@
+#loc_dates {
+    position: absolute;
+    color: $white;
+    bottom: 10px;
+    text-transform: capitalize;
+    font-size: 12px;
+    margin-bottom: 0px;
+    padding: 3px 5px;
+    background-color: $green;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.minou_container {
+  background-color: $white;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  .container_titles {
+    margin-left: 25px;
+  }
+}
+
+.dash_card_actions {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  margin-bottom: 0px;
+}
+
+ .fa-trash-alt {
+  color: $white;
+  font-size: 16px;
+  margin-left: 4px;
+ }
+
+ .fa-edit {
+  color: $white;
+  font-size: 18px;
+ }
+
+// #desc{
+//   line-height: 12px;
+// }

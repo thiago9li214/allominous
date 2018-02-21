@@ -1,22 +1,23 @@
 <div class="container">
-<h1>Liste des minous</h1>
+<h1>Mes minous</h1>
   <div class="row">
     <% @minous.each do |minou| %>
       <%= link_to minou_path(minou) do %>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="card">
-        <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("https://source.unsplash.com/400x400/?kitten,<%=minou.name%>");'>
-          <h1 class="card_title"><%= minou.name %></h1>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("https://source.unsplash.com/500x500/?kitten,<%=minou.name%>");'>
+              <h1 class="card_title"><%= minou.name %></h1>
+            </div>
+            <div class="card_content">
+              <p id="specie"><%= minou.specie %></p>
+              <p id="personality"><%= minou.personality %></p>
+              <p id="price"><%= minou.daily_price %> Kitokens par jour</p>
+            </div>
+          </div>
         </div>
-        <div class="card_content">
-          <p id="specie"><%= minou.specie %></p>
-          <p id="personality"><%= minou.personality %></p>
-          <p id="price"><%= minou.daily_price %> Kitokens par jour</p>
-        </div>
-      </div>
-    </div>
-    <% end  %>
+      <% end %>
     <% end %>
   </div>
+</div>
 
 <%= link_to 'Ajoute un minou', new_minou_path %>
