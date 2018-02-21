@@ -1,4 +1,4 @@
-// import "bootstrap";
-// import flatpickr from "flatpickr"
+import "bootstrap";
+import flatpickr from "flatpickr"
 
-// flatpickr(".datepicker", {})
+flatpickr(".datepicker", {})
