@@ -1,76 +1,46 @@
 
-<div class="wrapper">
-  <div class="container">
-    <div class="photo" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("https://source.unsplash.com/400x400/?kitten");'>
-
+<div class="mwrapper">
+  <div class="mcontainer">
+    <div class="photo">
+      <%= cl_image_tag @minou.photo, height: 400, width: 900, crop: :fill %>
     </div>
     <div class="minou-content">
       <div class="minou-infos">
-        <h1>Specie</h1>
-        <h2>Nom du chat</h2>
+        <h1 id="specie"> <%= @minou.specie %> </h1>
+        <h1 id="name"> <%= @minou.name %> </h1>
+        <h1 id="price"> <%= @minou.daily_price %> MinouCoins <%= image_tag "logo.png", height: 18 %> par jour</h1>
 
-        <h3>Caractère</h3>
+        <hr color="purple" align="left" width="120%" size="6">
 
-        <br>
-
-        <h1>Description</h1>
-
-        <br>
-
-        <h1>Anciennes locations</h1>
-
+        <h5><i class="fas fa-book"></i> Description </h5>
+          <p><%= @minou.description %></p>
+          <%= link_to "Retour à la liste de minous", minous_path %> <br>
+          <%= link_to "Editer mon minou", edit_minou_path(@minou) %>
+        <hr>
       </div>
+
       <div class="minou-form">
-        <h1>Minou form</h1>
+        <!-- current_user.photo a changer  -->
+        <%= cl_image_tag @minou.photo, height: 100, width: 100, crop: :fill, class: "avatar-form" %>
+        <%= simple_form_for [@minou, @rental] do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :begin_date %>
+            <%= f.input :end_date %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, class: "btn btn-primary" %>
+          </div>
+        <% end %>
       </div>
+
     </div>
   </div>
 </div>
 
 
 
-
-
-
-
-
-
-
-<h1><%= @minou.name %></h1>
-
-<ul>
-  <li> Espèce : <%= @minou.specie %> </li>
-  <li> Personnalité : <%= @minou.personality %> </li>
-</ul>
-<%= link_to "Retour à la liste de minous", minous_path %>
-
-<br>
-
-<!-- Affichage des locations du minou -->
-<h1>Locations du minous</h1>
-<% @rentals.each do |rental| %>
-<ul>
-  <li> Début : <%= rental.begin_date %> | Fin : <%= rental.end_date %> | Price : <%= rental.rental_price %>
-  </li>
-</ul>
-<% end %>
-
-<br>
-
-<!-- Formulaire de location -->
-<h1>Formulaire de location</h1>
-
-<%= simple_form_for [@minou, @rental] do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :begin_date %>
-    <%= f.input :end_date %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
 
 
