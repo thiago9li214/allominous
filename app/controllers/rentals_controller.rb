@@ -1,7 +1,6 @@
 class RentalsController < ApplicationController
 
   def create
-    raise
     @rental = Rental.new(rental_params)
     # Add the corresponding user and minou to rental
     @rental.user = current_user
@@ -14,6 +13,12 @@ class RentalsController < ApplicationController
     else
       render "minous/show"
     end
+  end
+
+   def destroy
+    @rental = Rental.find(params[:id])
+    @rental.destroy
+    redirect_to emprunts_path
   end
 
   private
