@@ -14,6 +14,9 @@ class PagesController < ApplicationController
 
   def historique
     @rentals = current_user.rentals
+    # Calcul du solde de minoucoins
+    @sold = 0
+    @rentals.each { |rental| @sold += rental.rental_price }
   end
 
 end
