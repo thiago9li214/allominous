@@ -22,7 +22,10 @@ h1, h2, h3 {
   margin-left: 25px;
 }
 
+.page-content-margin-navbar {
+  padding-top: $navbar-height;
+}
+
 .container {
   margin-top: 50px;
 }
-
