@@ -7,10 +7,22 @@
           <%= link_to "Voir tous les minous", minous_path , class: "button-voir-minou btn btn-danger btn-lg" %>
         </div>
     </div>
-
     <div class="banner-search">
-      <input type="text" class="form-control ou-minou" placeholder="Où ça le minou ?">
-      <input type="text" class="form-control ou-minou" placeholder="Quand ça le minou ?">
-      <%= link_to "Rechercher", minous_path , class: "button-search-minou btn btn-danger btn-lg" %>
+
+      <%= form_tag minous_path, class: "form-inline",  method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control ou-minou",
+        name: "query",
+        id: "user_address",
+        placeholder: "Address",
+        autocomplete: "on"
+        %>
+        <%= submit_tag("Rechercher", class: "button-search-minou btn btn-danger btn-lg") %>
+      <% end %>
+      <!-- <input type="text" class="form-control ou-minou" placeholder="Où ça le minou ?"> -->
+      <!-- <input type="text" class="form-control ou-minou" placeholder="Quand ça le minou ?"> -->
     </div>
 </div>
+
+

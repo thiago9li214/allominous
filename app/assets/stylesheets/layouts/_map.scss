@@ -1,0 +1,10 @@
+#mappy {
+    flex: 0 0 450px;
+    height: calc(100vh - #{$navbar-height});
+    position: sticky !important;
+    top: $navbar-height !important;
+}
+
+.wrapper {
+  display: flex;
+}

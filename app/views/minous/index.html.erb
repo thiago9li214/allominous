@@ -1,11 +1,18 @@
 
+<!-- <div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
+ -->
 <div class="wrapper">
   <div class="container">
   <h1>Mes minous</h1>
     <div class="row">
       <% @minous.each do |minou| %>
         <%= link_to minou_path(minou) do %>
-          <div class="col-12 col-sm-6 col-md-3">
+          <div class="col-12 col-sm-6 col-md-4">
             <div class="card">
               <% if minou.photo? %>
                 <div class="card_body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('<%= cl_image_path minou.photo, height: 400, width: 400, crop: :fill %>')">
@@ -26,10 +33,18 @@
         <% end %>
       <% end %>
     </div>
+    <div class="row">
+      <div class="button" >
+        <%= link_to 'Ajoute un minou', new_minou_path, class: "btn btn-primary" %>
+      </div>
+    </div>
   </div>
-  <div class="button" >
-  <%= link_to 'Ajoute un minou', new_minou_path, class: "btn btn-primary" %>
+  <div id="mappy" style="position: relative; overflow:hidden">
+    <div
+      id="map"
+      style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"
+      data-markers="<%= @markers.to_json %>"
+    ></div>
   </div>
 </div>
-
 
