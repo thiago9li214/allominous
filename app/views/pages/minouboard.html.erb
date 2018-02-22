@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="container">
+    <h1 class="container_titles">Mes minous</h1>
     <div class="row minou_container">
-      <h1 class="container_titles">Mes minous</h1>
       <% @minous.each do |minou| %>
         <%= link_to minou_path(minou) do %>
           <div class="col-xs-12 col-sm-6 col-md-3">
@@ -27,8 +27,8 @@
         <% end %>
       <% end %>
     </div>
-    <div class="row minou_container">
     <h1 class="container_titles">Minous hébergés</h1>
+    <div class="row minou_container">
       <% @rentals.each do |rental| %>
         <%= link_to minou_path(rental.minou) do %>
           <div class="col-xs-12 col-sm-6 col-md-3">

@@ -1,18 +1,18 @@
 
 <div class="wrapper">
   <div class="container">
-  <h1>Mes minous</h1>
+  <h1 class= "container_titles">Mes minous</h1>
     <div class="row">
       <% @minous.each do |minou| %>
         <%= link_to minou_path(minou) do %>
           <div class="col-12 col-sm-6 col-md-3">
             <div class="card">
               <% if minou.photo? %>
-                <div class="card_body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('<%= cl_image_path minou.photo, height: 400, width: 400, crop: :fill %>')">
+                <div class="card_body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0)), url('<%= cl_image_path minou.photo, height: 400, width: 400, crop: :fill %>')">
                   <h1 class="card_title"><%= minou.name %></h1>
                 </div>
                 <% else %>
-                <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("https://source.unsplash.com/400x400/?kitten,<%=minou.name%>");'>
+                <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0)), url("https://source.unsplash.com/400x400/?kitten,<%=minou.name%>");'>
                   <h1 class="card_title"><%= minou.name %></h1>
                 </div>
               <% end %>
