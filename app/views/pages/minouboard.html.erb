@@ -1,14 +1,13 @@
-+<!-- Menu 2 start -->
-+
-+  <div class="minouboard-navbar">
-  +      <%= link_to "Mes Minous", minouboard_path, :class => current_class?(minouboard_path) %>
-  +      <%= link_to "Mes emprunts", emprunts_path, :class => current_class?(emprunts_path) %>
-  +      <%= link_to "Historique", historique_path, :class => current_class?(historique_path) %>
-+  </div>
-+
-+<!-- Content start -->
+<!-- Menu 2 start -->
+
+<div class="minouboard-navbar">
+<%= link_to "Mes Minous", minouboard_path, :class => current_class?(minouboard_path) %>
+<%= link_to "Mes emprunts", emprunts_path, :class => current_class?(emprunts_path) %>
+ <%= link_to "Historique", historique_path, :class => current_class?(historique_path) %>
+</div>
+
+<!-- Content start -->
 <div class="wrapper">
-<<<<<<< HEAD
  <div class="container">
    <div class="row">
      <% @minous.each do |minou| %>
@@ -37,34 +36,3 @@
    <% end %>
  </div>
 </div>
-=======
-  <div class="container">
-    <div class="row">
-      <% @minous.each do |minou| %>
-        <%= link_to minou_path(minou) do %>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="card">
-              <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("https://source.unsplash.com/500x500/?kitten,<%=minou.name%>");'>
-                <h1 class="card_title"><%= minou.name %></h1>
-                <p class="dash_card_actions">
-                  <%= link_to minou, method: :delete, data: { confirm: 'Are you sure?'} do %>
-                    <i class="far fa-edit"></i>
-                  <% end %>
-                  <%= link_to minou, method: :delete, data: { confirm: 'Are you sure?'} do %>
-                    <i class="far fa-trash-alt"></i>
-                  <% end %>
-                </p>
-              </div>
-              <div class="card_content">
-                <p id="specie"><%= minou.specie %></p>
-                <p id="personality"><%= minou.personality %></p>
-                <p id="price"><%= minou.daily_price %> Kitokens par jour</p>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-</div>
->>>>>>> 1938b6f6e0e1d1ac58c4bb18ec5972500f405517
