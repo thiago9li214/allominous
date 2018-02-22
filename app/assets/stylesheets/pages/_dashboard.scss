@@ -1,3 +1,36 @@
+// menu
+.active {
+  padding-bottom: 8px;
+  border-bottom: 3px solid  $white;
+  font-weight: 400 !important;
+  color: $white !important;
+  opacity: 1 !important;
+  opacity: 0.3;
+}
+
+.minouboard-navbar {
+  text-align: center;
+  background-color: $blue;
+  height: 40px;
+}
+
+.minouboard-navbar > a{
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: 300;
+  color: $white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+.minouboard-navbar > a:hover{
+  color: $white;
+  transition: background 0.3s ease;
+  font-weight: 400;
+}
+
+// contenu
+
 #loc_dates {
     position: absolute;
     color: $white;
@@ -9,13 +42,6 @@
     background-color: $green;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-}
-
-.minou_container {
-  border-radius: 5px;
-  margin-bottom: 20px;
-  padding-bottom: 5px;
-  padding-top: 5px;
 }
 
 .dash_card_actions {
@@ -35,11 +61,3 @@
   color: $white;
   font-size: 18px;
  }
-
- .container {
-  background-color: $white;
- }
-
-// #desc{
-//   line-height: 12px;
-// }
