@@ -12,3 +12,37 @@
 .main-button:hover {
     opacity: 0.8;
   }
+
+.accepted-button {
+  color: $white;
+  background-color: $blue;
+  font-size: 16px;
+  border-radius: 50px;
+  width: 40px;
+  height: 25px;
+  margin-right: 10px;
+  border: 0px;
+}
+
+.refused-button {
+  color: $white;
+  background-color: $red;
+  font-size: 16px;
+  border-radius: 50px;
+  width: 40px;
+  height: 25px;
+  margin-left: 10px;
+  border: 0px;
+}
+
+.accepted-button:hover {
+  color: $white;
+  background-color: $blue;
+  opacity: 0.8;
+}
+
+.refused-button:hover {
+  color: $white;
+  background-color: $red;
+  opacity: 0.8;
+}

@@ -1,9 +1,9 @@
 <!-- Menu 2 start -->
 
 <div class="minouboard-navbar">
-<%= link_to "Mes Minous", minouboard_path, :class => current_class?(minouboard_path) %>
-<%= link_to "Mes emprunts", emprunts_path, :class => current_class?(emprunts_path) %>
- <%= link_to "Historique", historique_path, :class => current_class?(historique_path) %>
+  <%= link_to "Mes Minous", minouboard_path, :class => current_class?(minouboard_path) %>
+  <%= link_to "Mes emprunts", emprunts_path, :class => current_class?(emprunts_path) %>
+  <%= link_to "Historique", historique_path, :class => current_class?(historique_path) %>
 </div>
 
 <!-- Content start -->
@@ -15,12 +15,12 @@
      <div class="col-xs-12 col-sm-6 col-md-3">
       <div class="card">
        <% if minou.photo? %>
-          <div class="card_body" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url('<%= cl_image_path minou.photo, height: 400, width: 400, crop: :fill %>')">
+       <div class="card_body" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url('<%= cl_image_path minou.photo, height: 400, width: 400, crop: :fill %>')">
         <% else %>
-          <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url("https://source.unsplash.com/400x400/?kitten,<%=minou.name%>");'>
-        <% end %>
-         <h1 class="card_title"><%= minou.name %></h1>
-         <p class="dash_card_actions">
+        <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url("https://source.unsplash.com/400x400/?kitten,<%=minou.name%>");'>
+          <% end %>
+          <h1 class="card_title"><%= minou.name %></h1>
+          <p class="dash_card_actions">
            <%= link_to edit_minou_path(minou) do %>
            <i class="far fa-edit"></i>
            <% end %>
@@ -34,9 +34,25 @@
          <p id="personality"><%= minou.personality %></p>
          <p id="price"><%= minou.daily_price %> Kitokens par jour</p>
        </div>
+       <% minou.rentals.select {|rental| rental.status == "request"}.each do |rental|%>
+       <div class="accept_refuse_body">
+        <p id="accept_refuse_title">Nouvelle demande de location</p>
+        <p class="date_accept_refuse_rental"><%= rental.begin_date%> au <%= rental.end_date %></p>
+        <%= simple_form_for rental do |f| %>
+        <div class="accept_refuse_buttons">
+         <%= f.input :status, as: :hidden, input_html: { value: 'confirmed' } %>
+         <button type="submit" class="accepted-button"><i class="fas fa-check"></i></button>
+         <% end %>
+         <%= simple_form_for rental do |f| %>
+         <%= f.input :status, as: :hidden, input_html: { value: 'free' } %>
+         <button type="submit" class="refused-button"><i class="fas fa-times"></i></button>
+         <% end %>
+       </div>
      </div>
+     <% end %>
    </div>
-   <% end %>
-   <% end %>
  </div>
+ <% end %>
+ <% end %>
+</div>
 </div>

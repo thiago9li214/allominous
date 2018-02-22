@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222104612) do
+ActiveRecord::Schema.define(version: 20180222145459) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180222104612) do
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "free"
     t.index ["minou_id"], name: "index_rentals_on_minou_id"
     t.index ["user_id"], name: "index_rentals_on_user_id"
   end

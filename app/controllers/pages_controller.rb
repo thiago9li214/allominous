@@ -15,4 +15,5 @@ class PagesController < ApplicationController
   def historique
     @rentals = current_user.rentals
   end
+
 end

@@ -6,6 +6,8 @@ class RentalsController < ApplicationController
     @rental.user = current_user
     minou = Minou.find(params[:minou_id])
     @rental.minou = minou
+    @rental.status = "request"
+    # Rental price calculus a faire quand les date picker seront done
     @rental.begin_date = Date.parse(params[:rental][:begin_date][0..9])
     @rental.end_date = Date.parse(params[:rental][:end_date])
     # Rental price calculus
@@ -18,6 +20,13 @@ class RentalsController < ApplicationController
     end
   end
 
+  def update
+    @rental = Rental.find(params[:id])
+    @rental.update(rental_params)
+    redirect_to minouboard_path
+  end
+
+
    def destroy
     @rental = Rental.find(params[:id])
     @rental.destroy
@@ -28,6 +37,6 @@ class RentalsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def rental_params
-    params.require(:rental).permit(:begin_date, :end_date)
+    params.require(:rental).permit(:begin_date, :end_date, :status)
   end
 end
