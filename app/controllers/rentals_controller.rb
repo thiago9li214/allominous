@@ -9,7 +9,7 @@ class RentalsController < ApplicationController
     # Rental price calculus a faire quand les date picker seront done
     # @rental.rental_price = minou.daily_price * ( params[:rental][:end_date] - params[:rentals][:begin_date] )
     if @rental.save
-      redirect_to minou_path(minou)
+      redirect_to emprunts_path
     else
       render "minous/show"
     end
