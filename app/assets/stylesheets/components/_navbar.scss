@@ -11,6 +11,7 @@
   position: fixed;
   width: 100%;
   z-index: 1000;
+  border-bottom: solid $light-gray 0.5px;
 }
 
 /* Logo */
@@ -45,7 +46,7 @@
 }
 .navbar-minou .navbar-minou-link:hover {
   color: $blue;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Dropdown menu */

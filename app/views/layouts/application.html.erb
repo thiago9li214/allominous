@@ -7,10 +7,10 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= stylesheet_pack_tag 'application' %> <!-- Import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render "shared/navbar"%>
+    <%= render "shared/navbar" %>
     <%= render 'shared/flashes' %>
     <div class="page-content-margin-navbar">
       <%= yield %>
@@ -19,5 +19,7 @@
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag "map" %>
+    <%= javascript_pack_tag 'application' %> <!-- Importe les plugin js de app/javascript/packs/application.js -->
+
   </body>
 </html>

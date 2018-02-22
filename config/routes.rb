@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :minous do
     resources :rentals, only: [:new, :create]
   end
-  resources :rentals, only: [:delete, :edit, :update]
+  resources :rentals, only: [:destroy, :edit, :update]
 
   get 'minouboard', to: 'pages#minouboard'
+  get 'emprunts', to: 'pages#emprunts'
+  get 'historique', to: 'pages#historique'
 end

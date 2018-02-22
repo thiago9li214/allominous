@@ -2,7 +2,7 @@ class Minou < ApplicationRecord
   belongs_to :user
   mount_uploader :photo, PhotoUploader
 
-  # Species and personalities definition
+  # Species & personalities definition
   SIZES         = %w(petit moyen grand)
   SPECIES       = %w(chat lion tigre lynx panthère)
   PERSONALITIES = %w(grumpy susceptible sournois espiègle têtu simplet dragueur calin)
