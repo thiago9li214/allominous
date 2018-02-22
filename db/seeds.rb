@@ -20,7 +20,7 @@ user1 = User.new( {
     last_name:   'KatFan',
     email:       'minous@gmail.com',
     password: 'azerty',
-    address:      'Paris'
+    address:      '16 villa Gaudelet, Paris'
   } )
 user1.remote_photo_url = url
 user1.save!
@@ -32,7 +32,7 @@ user2 = User.new( {
     last_name:   'KatFan',
     email:       'minous2@gmail.com',
     password: 'azerty',
-    address:      'Paris'
+    address:      '13 avenue des Champs Elysées, Paris'
   } )
 user2.remote_photo_url = url
 user2.save!
@@ -44,7 +44,7 @@ user3 = User.new( {
     last_name:   'KatFan',
     email:       'minous3@gmail.com',
     password: 'azerty',
-    address:      'Paris'
+    address:      '27 avenue de la grande armée, Paris'
   } )
 user3.remote_photo_url = url
 user3.save!
@@ -56,7 +56,7 @@ user4 = User.new( {
     last_name:   'KatFan',
     email:       'minous4@gmail.com',
     password: 'azerty',
-    address:      'Paris'
+    address:      '2 rue des Princes, Boulogne-Billancourt'
   } )
 user4.remote_photo_url = url
 user4.save!
