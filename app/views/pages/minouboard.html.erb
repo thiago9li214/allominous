@@ -17,10 +17,10 @@
        <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("https://source.unsplash.com/500x500/?kitten,<%=minou.name%>");'>
          <h1 class="card_title"><%= minou.name %></h1>
          <p class="dash_card_actions">
-           <%= link_to minou, method: :delete, data: { confirm: 'Are you sure?'} do %>
+           <%= link_to edit_minou_path(minou) do %>
            <i class="far fa-edit"></i>
            <% end %>
-           <%= link_to minou, method: :delete, data: { confirm: 'Are you sure?'} do %>
+           <%= link_to minou, method: :delete, data: { confirm: 'Minoupauser ton minou ?'} do %>
            <i class="far fa-trash-alt"></i>
            <% end %>
          </p>
