@@ -12,10 +12,8 @@ class RentalsController < ApplicationController
     @rental.rental_price = minou.daily_price * ( @rental.end_date - @rental.begin_date ).to_i
     # If save ok, redirect to minouboard
     if @rental.save
-      raise
       redirect_to emprunts_path
     else
-      raise
       render "minous/show"
     end
   end

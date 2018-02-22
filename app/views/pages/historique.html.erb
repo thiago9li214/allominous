@@ -1,67 +1,40 @@
 <div class="minouboard-navbar">
-      <%= link_to "Mes Minous", minouboard_path, :class => current_class?(minouboard_path) %>
-      <%= link_to "Mes emprunts", emprunts_path, :class => current_class?(emprunts_path) %>
-      <%= link_to "Historique", historique_path, :class => current_class?(historique_path) %>
-  </div>
+  <%= link_to "Mes Minous", minouboard_path, :class => current_class?(minouboard_path) %>
+  <%= link_to "Mes emprunts", emprunts_path, :class => current_class?(emprunts_path) %>
+  <%= link_to "Historique", historique_path, :class => current_class?(historique_path) %>
+</div>
 
 <div class="wrapper">
   <div class="container">
 
-      <h1>Your messages</h1>
-      <!-- Code your tabs here -->
-      <div class="tabs">
-        <a href="#" class="tab active">Traveling</a>
-        <a href="#" class="tab">Hosting</a>
-      </div>
-
+      <h3>Mes anciennes locations (work in progress)</h3>
+      <!-- Boucle sur les rentals du user -->
       <ul class="inbox">
-        <li class="message">
-          <%= cl_image_tag current_user.photo, height: 100, width: 100, crop: :fill, class: "avatar-form" %>
-          <div class="message-details">
-            <h2>Cecile Veneziani</h2>
-            <p>23/09/17</p>
-          </div>
-          <div class="message-content">
-            <h2>I am not sure yet!</h2>
-            <p>I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?</p>
-          </div>
-          <div class="message-status">
-            <h2>Accepted</h2>
-            <p>$345</p>
-          </div>
-        </li>
-        <li class="message">
-          <%= cl_image_tag current_user.photo, height: 100, width: 100, crop: :fill, class: "avatar-form" %>
+        <% @rentals.each do |rental| %>
+
+          <li class="message">
+            <div class="avatar-box">
+              <%= image_tag rental.minou.photo, height: 120, width: 120, crop: :center, class: "big-avatar" %>
+              <%= image_tag rental.user.photo, height: 50, width: 50, crop: :center, class: "small-avatar" %>
+            </div>
+
             <div class="message-details">
-              <h2>Cecile Veneziani</h2>
-              <p>23/09/17</p>
+              <h2> <%= rental.minou.name %> </h2>
+              <p> <%= rental.user.first_name %> <%= rental.user.last_name %></p>
             </div>
             <div class="message-content">
-              <h2>I am not sure yet!</h2>
+              <h2> <%= rental.begin_date.strftime("%e %b") %> <i class="fas fa-arrow-right"></i> <%= rental.end_date.strftime("%e %b") %></h2>
               <p>I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?</p>
             </div>
             <div class="message-status">
-              <h2>Accepted</h2>
-              <p>$345</p>
+              <h2><%= rental.rental_price %> MinouCoins <%= image_tag "logo.png", height: 18 %> </h2>
+              <p> Accepted</p>
             </div>
           </li>
-        <li class="message">
-          <%= cl_image_tag current_user.photo, height: 100, width: 100, crop: :fill, class: "avatar-form" %>
-            <div class="message-details">
-              <h2>Cecile Veneziani</h2>
-              <p>23/09/17</p>
-            </div>
-            <div class="message-content">
-              <h2>I am not sure yet!</h2>
-              <p>I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?</p>
-            </div>
-            <div class="message-status">
-              <h2>Accepted</h2>
-              <p>$345</p>
-            </div>
-        </li>
-      </ul>
 
+        <% end %>
+
+      </ul>
 
   </div>
 </div>
