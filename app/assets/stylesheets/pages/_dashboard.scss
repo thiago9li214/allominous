@@ -30,6 +30,35 @@
 }
 
 // contenu
+.accept_refuse_body {
+  margin-top: 10px;
+  text-align: center;
+  border: 1px solid $light-gray;
+  padding: 10px 10px;
+  border-radius: 5px;
+  background-color: rgba(1,1,1, 0.02);
+}
+
+#accept_refuse_title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: $dark-gray !important;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.accept_refuse_buttons {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.date_accept_refuse_rental {
+  color: $dark-gray;
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
 
 #loc_dates {
     position: absolute;

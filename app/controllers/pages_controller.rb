@@ -14,4 +14,5 @@ class PagesController < ApplicationController
 
   def historique
   end
+
 end
