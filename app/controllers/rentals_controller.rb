@@ -1,6 +1,7 @@
 class RentalsController < ApplicationController
 
   def create
+    raise
     @rental = Rental.new(rental_params)
     # Add the corresponding user and minou to rental
     @rental.user = current_user
