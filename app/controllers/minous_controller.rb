@@ -20,7 +20,7 @@ class MinousController < ApplicationController
     @minou = Minou.new(minou_params)
     @minou.user = current_user
     if @minou.save
-      redirect_to minou_path(@minou)
+      redirect_to minouboard_path(@minou)
     else
       render :new
     end
@@ -36,7 +36,7 @@ class MinousController < ApplicationController
 
   def destroy
     @minou.destroy
-    redirect_to minous_path
+    redirect_to minouboard_path
   end
 
   private

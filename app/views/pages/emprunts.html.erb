@@ -22,6 +22,9 @@
           <div class="card_content">
             <p id="specie"><%= rental.minou.specie %></p>
             <p id="personality"><%= rental.minou.personality %></p>
+            <%= link_to rental, method: :delete, data: { confirm: 'Annuler la location ?'} do %>
+            <p class="cancel_loc">Annuler la location</p>
+           <% end %>
           </div>
         </div>
       </div>
