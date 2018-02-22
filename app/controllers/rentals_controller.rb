@@ -6,11 +6,16 @@ class RentalsController < ApplicationController
     @rental.user = current_user
     minou = Minou.find(params[:minou_id])
     @rental.minou = minou
-    # Rental price calculus a faire quand les date picker seront done
-    # @rental.rental_price = minou.daily_price * ( params[:rental][:end_date] - params[:rentals][:begin_date] )
+    @rental.begin_date = Date.parse(params[:rental][:begin_date][0..9])
+    @rental.end_date = Date.parse(params[:rental][:end_date])
+    # Rental price calculus
+    @rental.rental_price = minou.daily_price * ( @rental.end_date - @rental.begin_date ).to_i
+    # If save ok, redirect to minouboard
     if @rental.save
+      raise
       redirect_to emprunts_path
     else
+      raise
       render "minous/show"
     end
   end
