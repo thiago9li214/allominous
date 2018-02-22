@@ -6,6 +6,12 @@ class PagesController < ApplicationController
 
   def minouboard
     @minous = current_user.minous
+  end
+
+  def emprunts
     @rentals = current_user.rentals
+  end
+
+  def historique
   end
 end
