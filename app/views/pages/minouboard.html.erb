@@ -1,51 +1,42 @@
+<!-- Menu 2 start -->
+
+<div class="minouboard-navbar">
+<%= link_to "Mes Minous", minouboard_path, :class => current_class?(minouboard_path) %>
+<%= link_to "Mes emprunts", emprunts_path, :class => current_class?(emprunts_path) %>
+ <%= link_to "Historique", historique_path, :class => current_class?(historique_path) %>
+</div>
+
+<!-- Content start -->
 <div class="wrapper">
-  <div class="container">
-    <h1 class="container_titles">Mes minous</h1>
-    <div class="row minou_container">
-      <% @minous.each do |minou| %>
-        <%= link_to minou_path(minou) do %>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="card">
-              <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("https://source.unsplash.com/500x500/?kitten,<%=minou.name%>");'>
-                <h1 class="card_title"><%= minou.name %></h1>
-                <p class="dash_card_actions">
-                  <%= link_to minou, method: :delete, data: { confirm: 'Are you sure?'} do %>
-                    <i class="far fa-edit"></i>
-                  <% end %>
-                  <%= link_to minou, method: :delete, data: { confirm: 'Are you sure?'} do %>
-                    <i class="far fa-trash-alt"></i>
-                  <% end %>
-                </p>
-              </div>
-              <div class="card_content">
-                <p id="specie"><%= minou.specie %></p>
-                <p id="personality"><%= minou.personality %></p>
-                <p id="price"><%= minou.daily_price %> Kitokens par jour</p>
-              </div>
-            </div>
-          </div>
+ <div class="container">
+   <div class="row">
+     <% @minous.each do |minou| %>
+     <%= link_to minou_path(minou) do %>
+     <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card">
+       <% if minou.photo? %>
+          <div class="card_body" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url('<%= cl_image_path minou.photo, height: 400, width: 400, crop: :fill %>')">
+        <% else %>
+          <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url("https://source.unsplash.com/400x400/?kitten,<%=minou.name%>");'>
         <% end %>
-      <% end %>
-    </div>
-    <h1 class="container_titles">Minous hébergés</h1>
-    <div class="row minou_container">
-      <% @rentals.each do |rental| %>
-        <%= link_to minou_path(rental.minou) do %>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="card">
-              <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url("https://source.unsplash.com/500x500/?kitten,<%=rental.minou.name%>");'>
-                <h1 class="card_title"><%= rental.minou.name %></h1>
-                <p id="loc_dates"> Du : <%= rental.begin_date %> au : <%= rental.end_date %></p>
-              </div>
-              <div class="card_content">
-                <p id="specie"><%= rental.minou.specie %></p>
-                <p id="personality"><%= rental.minou.personality %></p>
-  <!--               <p id="desc"><%= rental.minou.description %></p>
-   -->            </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
+         <h1 class="card_title"><%= minou.name %></h1>
+         <p class="dash_card_actions">
+           <%= link_to edit_minou_path(minou) do %>
+           <i class="far fa-edit"></i>
+           <% end %>
+           <%= link_to minou, method: :delete, data: { confirm: 'Minoupauser ton minou ?'} do %>
+           <i class="far fa-trash-alt"></i>
+           <% end %>
+         </p>
+       </div>
+       <div class="card_content">
+         <p id="specie"><%= minou.specie %></p>
+         <p id="personality"><%= minou.personality %></p>
+         <p id="price"><%= minou.daily_price %> Kitokens par jour</p>
+       </div>
+     </div>
+   </div>
+   <% end %>
+   <% end %>
+ </div>
 </div>

@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :rentals, only: [:delete, :edit, :update]
 
   get 'minouboard', to: 'pages#minouboard'
+  get 'emprunts', to: 'pages#emprunts'
+  get 'historique', to: 'pages#historique'
 end
