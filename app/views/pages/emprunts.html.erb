@@ -11,17 +11,14 @@
       <%= link_to minou_path(rental.minou) do %>
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="card">
-          <% if rental.minou.photo? %>
+        <% if rental.minou.photo? %>
           <div class="card_body" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url('<%= cl_image_path rental.minou.photo, height: 400, width: 400, crop: :fill %>')">
-            <h1 class="card_title"><%= rental.minou.name %></h1>
-            <p id="loc_dates"> Du : <%= rental.begin_date %> au : <%= rental.end_date %></p>
-          </div>
-          <% else %>
+        <% else %>
           <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url("https://source.unsplash.com/400x400/?kitten,<%=rental.minou.name%>");'>
+        <% end %>
             <h1 class="card_title"><%= rental.minou.name %></h1>
             <p id="loc_dates"> Du : <%= rental.begin_date %> au : <%= rental.end_date %></p>
           </div>
-          <% end %>
           <div class="card_content">
             <p id="specie"><%= rental.minou.specie %></p>
             <p id="personality"><%= rental.minou.personality %></p>
