@@ -7,7 +7,7 @@
 <div class="wrapper">
   <div class="container">
 
-      <h3>Mes anciennes locations (work in progress)</h3>
+      <h4>Mon solde : <span class="sold"> <%= @sold %> </span> <%= image_tag "logo.png", height: 45, id: "minou_coin_logo" %> </h4>
       <!-- Boucle sur les rentals du user -->
       <ul class="inbox">
         <% @rentals.each do |rental| %>
@@ -19,16 +19,17 @@
             </div>
 
             <div class="message-details">
-              <h2> <%= rental.minou.name %> </h2>
-              <p> <%= rental.user.first_name %> <%= rental.user.last_name %></p>
+              <h1 id="specie"> <%= rental.minou.specie %> </h1>
+              <h1 id="name"> <%= rental.minou.name %> </h1>
+              <h2> <i class="far fa-calendar-alt"></i> <%= rental.begin_date.strftime("%e %b") %> <i class="fas fa-arrow-right"></i> <%= rental.end_date.strftime("%e %b") %> </h2>
+              <p> <%= (rental.end_date - rental.begin_date).to_i %> jours</p>
             </div>
             <div class="message-content">
-              <h2> <%= rental.begin_date.strftime("%e %b") %> <i class="fas fa-arrow-right"></i> <%= rental.end_date.strftime("%e %b") %></h2>
-              <p>I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?</p>
+              <p> L'un des meilleurs minous que j'ai connu, doux, attentionné, le poil soyeux, à reprendre de toute urgence même s'il peut être parfois irritable. </p>
             </div>
             <div class="message-status">
-              <h2><%= rental.rental_price %> MinouCoins <%= image_tag "logo.png", height: 18 %> </h2>
-              <p> Accepted</p>
+              <h2 id="minou-coin"> + <%= rental.rental_price %> </h2>
+              <h2>MinouCoins <%= image_tag "logo.png", height: 25 %> </h2>
             </div>
           </li>
 

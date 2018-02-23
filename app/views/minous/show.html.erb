@@ -8,35 +8,72 @@
       <div class="minou-infos">
         <h1 id="specie"> <%= @minou.specie %> </h1>
         <h1 id="name"> <%= @minou.name %> </h1>
-        <h1 id="price"> <%= @minou.daily_price %> MinouCoins <%= image_tag "logo.png", height: 18 %> par jour</h1>
 
-        <hr color="purple" align="left" width="120%" size="6">
+        <h1 id="address"> <i class="fas fa-map-marker-alt"></i> <%= @minou.user.address %> </h1>
+        <h1 id="price"> En accueillant ce minou, vous gagnez <%= @minou.daily_price %> MinouCoins <%= image_tag "logo.png", height: 18 %> par jour</h1>
+
+        <%= link_to "< Retour à la liste de minous", minous_path %>
+
+        <br> <br> <br>
 
         <h5><i class="fas fa-book"></i> Description </h5>
           <p><%= @minou.description %></p>
-          <%= link_to "Retour à la liste de minous", minous_path %> <br>
-          <%= link_to "Editer mon minou", edit_minou_path(@minou) %>
-        <hr>
+
+          <br>
+
+        <h5><i class="fas fa-comment-alt"></i> Avis sur le minou</h5>
+
+
+
+      </div>
+      <div class="sticky">
+        <div class="minou-form">
+          <!-- current_user.photo a changer  -->
+          <%= cl_image_tag @minou.user.photo, height: 100, width: 100, crop: :fill, class: "avatar-form" %>
+          <%= simple_form_for [@minou, @rental] do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+              <%= f.input :begin_date, as: :string, required: false, input_html: {id: "range_start"}, label: "Du :" %>
+              <%= f.input :end_date, as: :string, required: false, input_html: {id: "range_end"}, label: "Au :" %>
+            </div>
+
+            <div class="form-actions">
+              <%= f.submit "Réserver ce Minou", class: "main-button" %>
+            </div>
+          <% end %>
+        </div>
       </div>
 
-      <div class="minou-form">
-        <!-- current_user.photo a changer  -->
-        <%= cl_image_tag @minou.user.photo, height: 100, width: 100, crop: :fill, class: "avatar-form" %>
-        <%= simple_form_for [@minou, @rental] do |f| %>
-          <%= f.error_notification %>
-
-          <div class="form-inputs">
-            <%= f.input :begin_date, as: :string, required: false, input_html: {id: "range_start"}, label: "Du :" %>
-            <%= f.input :end_date, as: :string, required: false, input_html: {id: "range_end"}, label: "Au :" %>
-          </div>
-
-          <div class="form-actions">
-            <%= f.submit "Réserver ce Minou", class: "main-button" %>
-          </div>
-        <% end %>
-      </div>
 
     </div>
+
+
+
+
+      <ul class="inbox">
+        <% @rentals.each do |rental| %>
+
+          <li class="message">
+            <div class="avatar-box">
+              <%= image_tag rental.minou.photo, height: 120, width: 120, crop: :center, class: "big-avatar" %>
+              <%= image_tag rental.user.photo, height: 50, width: 50, crop: :center, class: "small-avatar" %>
+            </div>
+
+            <div class="message-details">
+              <h1 id="specie"> <%= rental.minou.specie %> </h1>
+              <h1 id="name"> <%= rental.minou.name %> </h1>
+              <h2> <i class="far fa-calendar-alt"></i> <%= rental.begin_date.strftime("%e %b") %> <i class="fas fa-arrow-right"></i> <%= rental.end_date.strftime("%e %b") %> </h2>
+              <p> <%= (rental.end_date - rental.begin_date).to_i %> jours</p>
+            </div>
+            <div class="message-content">
+              <p> L'un des meilleurs minous que j'ai connu, doux, attentionné, le poil soyeux, à reprendre de toute urgence même s'il peut être parfois irritable. </p>
+            </div>
+          </li>
+
+        <% end %>
+
+      </ul>
   </div>
 </div>
 

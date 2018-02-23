@@ -7,7 +7,9 @@ class MinousController < ApplicationController
     # recuperer address dans params
     if params[:query] != nil
       @users = User.near(params[:query], 50)
+
       id = @users.map { |u| u.id }
+
       @minous = Minou.where(user_id: id)
 
       @markers = @minous.map do |minou|
@@ -19,6 +21,7 @@ class MinousController < ApplicationController
     else
       @minous = Minou.all
 
+
       @markers = @minous.map do |minou|
         {
           lat: minou.user.latitude,
@@ -27,6 +30,7 @@ class MinousController < ApplicationController
       end
     end
     # @minous = Minou.all
+
   end
 
   def show
