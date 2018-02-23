@@ -1,4 +1,9 @@
 // menu
+.avatar-little {
+  border-radius: 50%;
+  border: 1px solid $light-gray;
+}
+
 .active {
   padding-bottom: 8px;
   border-bottom: 3px solid  $white;
