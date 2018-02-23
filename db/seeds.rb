@@ -26,7 +26,7 @@ user1.remote_photo_url = url
 user1.save!
 
 # User 2
-url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/g_face,c_thumb,w_200,h_200/v1519223922/e%CC%81pe%CC%81e_copie.jpg'
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519399123/waob78degsbwyct7xoq0.jpg'
 user2 = User.new( {
     first_name:  'MinouAccro',
     last_name:   'KatFan',
@@ -264,11 +264,11 @@ minou1.remote_photo_url = url
 minou1.save!
 
 # Minou 2
-url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519223922/e%CC%81pe%CC%81e.jpg'
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519400901/1c.jpg'
 minou2 = Minou.new({
     name:         'Simba',
     size:         'petit',
-    specie:       'lion',
+    specie:       'chat',
     age:          1,
     personality:  'espiègle',
     description:  'Il est le futur roi du royaume animal.',
@@ -294,7 +294,7 @@ minou3.remote_photo_url = url
 minou3.save!
 
 # Minou 4
-url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519226472/catcoueette.jpg'
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519401988/cccc.jpg'
 minou4 = Minou.new({
     name:         'Grumpy Cat',
     size:         'moyen',
@@ -308,8 +308,8 @@ minou4 = Minou.new({
 minou4.remote_photo_url = url
 minou4.save!
 
-
-Minou.create({
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519401989/ccc.jpg'
+minou5 = Minou.new({
     name:         'Tom de Jerrys',
     size:         'moyen',
     specie:       'chat',
@@ -319,20 +319,11 @@ Minou.create({
     daily_price:  8,
     user_id:      user5.id
   })
+minou5.remote_photo_url = url
+minou5.save!
 
-
-Minou.create({
-    name:         'Chat botté',
-    size:         'moyen',
-    specie:       'chat',
-    age:          6,
-    personality:  'grumpy',
-    description:  'Il botterait bien les fesses de Jerry.',
-    daily_price:  8,
-    user_id:      user6.id
-  })
-
-Minou.create({
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519400900/4c.jpg'
+minou6 = Minou.new({
     name:         'Chat de la mère Michel',
     size:         'moyen',
     specie:       'chat',
@@ -342,8 +333,11 @@ Minou.create({
     daily_price:  8,
     user_id:      user7.id
   })
+minou6.remote_photo_url = url
+minou6.save!
 
-Minou.create({
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519401988/cc.jpg'
+minou7 = Minou.new({
     name:         'L\'Aristochat',
     size:         'moyen',
     specie:       'chat',
@@ -353,9 +347,11 @@ Minou.create({
     daily_price:  8,
     user_id:      user8.id
   })
+minou7.remote_photo_url = url
+minou7.save!
 
-
-Minou.create({
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519400900/5c.jpg'
+minou8 = Minou.new({
     name:         'Tigrou',
     size:         'moyen',
     specie:       'tigre',
@@ -365,8 +361,11 @@ Minou.create({
     daily_price:  8,
     user_id:      user9.id
   })
+minou8.remote_photo_url = url
+minou8.save!
 
-Minou.create({
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519400899/12c.jpg'
+minou9 = Minou.new({
     name:         'Lucifer',
     size:         'moyen',
     specie:       'chat',
@@ -376,8 +375,11 @@ Minou.create({
     daily_price:  8,
     user_id:      user10.id
   })
+minou9.remote_photo_url = url
+minou9.save!
 
-Minou.create({
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519400899/9c.jpg'
+minou10 = Minou.new({
     name:         'Garfield',
     size:         'moyen',
     specie:       'chat',
@@ -387,19 +389,25 @@ Minou.create({
     daily_price:  8,
     user_id:      user11.id
   })
+minou10.remote_photo_url = url
+minou10.save!
 
-Minou.create({
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519400900/6c.jpg'
+minou11 = Minou.new({
     name:         'Sarkozy',
     size:         'moyen',
-    specie:       'chat',
+    specie:       'lion',
     age:          6,
     personality:  'calin',
     description:  'Il botterait bien les fesses de Jerry.',
     daily_price:  8,
     user_id:      user12.id
   })
+minou11.remote_photo_url = url
+minou11.save!
 
-Minou.create({
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519400899/10c.jpg'
+minou12 = Minou.new({
     name:         'Harlem',
     size:         'moyen',
     specie:       'chat',
@@ -409,8 +417,11 @@ Minou.create({
     daily_price:  8,
     user_id:      user13.id
   })
+minou12.remote_photo_url = url
+minou12.save!
 
-Minou.create({
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519400899/13c.jpg'
+minou13 = Minou.new({
     name:         'Churchill',
     size:         'moyen',
     specie:       'chat',
@@ -420,6 +431,22 @@ Minou.create({
     daily_price:  8,
     user_id:      user14.id
   })
+minou13.remote_photo_url = url
+minou13.save!
+
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519400899/11c.jpg'
+minou14 = Minou.new({
+    name:         'Chat botté',
+    size:         'moyen',
+    specie:       'chat',
+    age:          6,
+    personality:  'grumpy',
+    description:  'Il botterait bien les fesses de Jerry.',
+    daily_price:  8,
+    user_id:      user6.id
+  })
+minou14.remote_photo_url = url
+minou14.save!
 
 
 
