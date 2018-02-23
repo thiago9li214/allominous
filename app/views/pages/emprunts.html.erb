@@ -1,8 +1,8 @@
 <div class="minouboard-navbar">
-      <%= link_to "Mes Minous", minouboard_path, :class => current_class?(minouboard_path) %>
-      <%= link_to "Mes emprunts", emprunts_path, :class => current_class?(emprunts_path) %>
-      <%= link_to "Historique", historique_path, :class => current_class?(historique_path) %>
-  </div>
+  <%= link_to "Mes Minous", minouboard_path, :class => current_class?(minouboard_path) %>
+  <%= link_to "Mes emprunts", emprunts_path, :class => current_class?(emprunts_path) %>
+  <%= link_to "Historique", historique_path, :class => current_class?(historique_path) %>
+</div>
 
 <div class="wrapper">
   <div class="container">
@@ -11,25 +11,38 @@
       <%= link_to minou_path(rental.minou) do %>
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="card">
-        <% if rental.minou.photo? %>
-          <div class="card_body" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url('<%= cl_image_path rental.minou.photo, height: 400, width: 400, crop: :fill %>')">
-        <% else %>
-          <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1)), url("https://source.unsplash.com/400x400/?kitten,<%=rental.minou.name%>");'>
-        <% end %>
-            <h1 class="card_title"><%= rental.minou.name %></h1>
-            <p id="loc_dates"> Du : <%= rental.begin_date %> au : <%= rental.end_date %></p>
-          </div>
-          <div class="card_content">
-            <p id="specie"><%= rental.minou.specie %></p>
-            <p id="personality"><%= rental.minou.personality %></p>
+          <% if rental.minou.photo? %>
+          <div class="card_body" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path rental.minou.photo, height: 400, width: 400, crop: :fill %>')">
+            <% else %>
+            <div class="card_body" style='background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("https://source.unsplash.com/400x400/?kitten,<%=rental.minou.name%>");'>
+              <% end %>
+              <h1 class="card_title"><%= rental.minou.name %></h1>
+              <div id = "loc_status">
+                <% if rental.status == "request" %>
+                <p id="loc_pending">En attente</p>
+                <% elsif rental.status == "confirmed" %>
+                <p id="loc_confirmed">Confirmée</p>
+                <% elsif rental.status == "free" %>
+                <p id="loc_refused"> Refusée</p>
+                <% end %>
+              </div>
+            </div>
+            <div class="card_content">
+              <p id="specie"><%= rental.minou.specie %></p>
+              <p id="personality"><%= rental.minou.personality %></p>
+              <p id="personality"> <i class="far fa-calendar-alt"></i> <%= rental.begin_date.strftime("%e %b %Y") %> <i class="fas fa-arrow-right"></i> <%= rental.end_date.strftime("%e %b %Y ") %></p>
+            </div>
             <%= link_to rental, method: :delete, data: { confirm: 'Annuler la location ?'} do %>
-            <p class="cancel_loc">Annuler la location</p>
-           <% end %>
+              <% if rental.status != "free"%>
+              <p class="archive_button">Annuler la location</p>
+              <% else %>
+              <p class="archive_button">Archiver la demande</p>
+              <% end %>
+              <% end %>
           </div>
         </div>
+        <% end %>
+        <% end %>
       </div>
-      <% end %>
-      <% end %>
     </div>
   </div>
-</div>
