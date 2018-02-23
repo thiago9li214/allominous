@@ -103,3 +103,20 @@
   border-left: 1px solid $gray;
   border-top: 1px solid $gray;
 }
+
+
+// index navbar
+
+.logo-searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner-search-navbar {
+  margin: 25px;
+}
+
+.search-button {
+  border: none;
+}

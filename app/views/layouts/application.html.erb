@@ -12,8 +12,10 @@
   <body>
     <% if current_page?(controller: 'pages', action: 'essai') %>
     <%= render "shared/transparent_navbar" %>
+    <% elsif current_page?(controller: 'minous', action: 'index') %>
+      <%= render "shared/search-bar-navbar-index" %>
     <% else %>
-    <%= render "shared/navbar" %>
+      <%= render "shared/navbar" %>
     <% end %>
     <%= render 'shared/flashes' %>
     <div class="page-content-margin-navbar">
