@@ -10,7 +10,6 @@ class MinousController < ApplicationController
 
       id = @users.map { |u| u.id }
 
-
       @minous = Minou.where(user_id: id)
 
       @markers = @minous.map do |minou|
@@ -21,7 +20,17 @@ class MinousController < ApplicationController
       end
     else
       @minous = Minou.all
+
+
+      @markers = @minous.map do |minou|
+        {
+          lat: minou.user.latitude,
+          lng: minou.user.longitude
+        }
+      end
     end
+    # @minous = Minou.all
+
   end
 
   def show
