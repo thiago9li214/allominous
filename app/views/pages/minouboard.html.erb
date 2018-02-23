@@ -2,7 +2,7 @@
 
 <div class="minouboard-navbar">
   <%= link_to "Mes Minous", minouboard_path, :class => current_class?(minouboard_path) %>
-  <%= link_to "Mes emprunts", emprunts_path, :class => current_class?(emprunts_path) %>
+  <%= link_to "Minoucations", emprunts_path, :class => current_class?(emprunts_path) %>
   <%= link_to "Historique", historique_path, :class => current_class?(historique_path) %>
 </div>
 
@@ -38,7 +38,7 @@
        <div class="accept_refuse_body">
         <%= cl_image_tag rental.user.photo, height: 46, width: 46, crop: :fill, class: "avatar-little" %>
         <p id="accept_refuse_title"><%= rental.user.first_name %> veut accueillir <%= minou.name %></p>
-        <p class="date_accept_refuse_rental">Du <%= rental.begin_date%> au <%= rental.end_date %></p>
+        <p class="date_accept_refuse_rental"><i class="far fa-calendar-alt"></i> <%= rental.begin_date.strftime("%e %b %Y ") %> <i class="fas fa-arrow-right"></i> <%= rental.end_date.strftime("%e %b %Y") %></p>
         <%= simple_form_for rental do |f| %>
         <div class="accept_refuse_buttons">
          <%= f.input :status, as: :hidden, input_html: { value: 'confirmed' } %>

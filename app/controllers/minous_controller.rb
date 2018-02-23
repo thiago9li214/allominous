@@ -5,7 +5,9 @@ class MinousController < ApplicationController
   def index
     # On recupere la requete de geoloc
     if params[:query] != nil
-      @users = User.near(params[:query], 50)
+
+      @users = User.near(params[:query], 20)
+
       id = @users.map { |u| u.id }
       @query = params[:query]
       # Si filtre alors les minous sont differents
@@ -24,6 +26,7 @@ class MinousController < ApplicationController
           lng: minou.user.longitude
         }
       end
+
     else
       @minous = Minou.all
 

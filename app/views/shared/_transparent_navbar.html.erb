@@ -1,7 +1,7 @@
-<div class="navbar-minou">
+<div class="navbar-transparent">
   <!-- Logo -->
   <%= link_to minous_path, class: "navbar-minou-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= image_tag "minou_logo_white.png", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -10,9 +10,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Partager mon Minou", new_minou_path, class: "navbar-minou-item navbar-minou-link" %>
-      <%= link_to "Minouboard", minouboard_path, class: "navbar-minou-item navbar-minou-link" %>
-      <%= link_to "Profil", edit_user_registration_path, class: "navbar-minou-item navbar-minou-link" %>
+      <%= link_to "Partager mon Minou", new_minou_path, class: "navbar-minou-item white-navbar-minou-link" %>
+      <%= link_to "Minouboard", minouboard_path, class: "navbar-minou-item white-navbar-minou-link" %>
+      <%= link_to "Profil", edit_user_registration_path, class: "navbar-minou-item white-navbar-minou-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-minou-item">
@@ -32,9 +32,9 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to "Partager mon Minou", new_minou_path, class: "navbar-minou-item navbar-minou-link" %>
-      <%= link_to "Inscription", new_user_registration_path, class: "navbar-minou-item navbar-minou-link" %>
-      <%= link_to t(".sign_in", default: "Connexion"), new_user_session_path, class: "navbar-minou-item navbar-minou-link" %>
+      <%= link_to "Partager mon Minou", new_minou_path, class: "navbar-minou-item white-navbar-minou-link" %>
+      <%= link_to "Inscription", new_user_registration_path, class: "navbar-minou-item white-navbar-minou-link" %>
+      <%= link_to t(".sign_in", default: "Connexion"), new_user_session_path, class: "navbar-minou-item white-navbar-minou-link" %>
     <% end %>
   </div>
 

@@ -1,3 +1,41 @@
-.cancel_loc {
-  color: red;
+#loc_dates {
+    position: absolute;
+    color: $white;
+    bottom: 10px;
+    text-transform: capitalize;
+    font-size: 12px;
+    margin-bottom: 0px;
+    padding: 3px 5px;
+    background-color: $green;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#loc_status {
+  position: absolute;
+    bottom: 20px;
+    text-transform: capitalize;
+    font-size: 16px;
+    border-right: 0px solid $light-gray;
+    margin-bottom: 0px;
+    right: 0px;
+    padding: 3px 5px;
+    background-color: rgba(255,255,255,0.9);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#loc_pending {
+  color: $orange;
+  margin: 0;
+}
+
+#loc_confirmed {
+  color: $blue;
+  margin: 0;
+}
+
+#loc_refused {
+  color: $red;
+  margin: 0;
 }

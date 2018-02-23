@@ -1,8 +1,25 @@
 <div class="navbar-minou">
+  <div class="logo-searchbar">
   <!-- Logo -->
-  <%= link_to minous_path, class: "navbar-minou-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
-  <% end %>
+    <%= link_to minous_path, class: "navbar-minou-brand" do %>
+      <%= image_tag "logo.png", height: 50 %>
+    <% end %>
+
+    <div class="banner-search-navbar">
+
+      <%= form_tag minous_path, class: "form-inline form-navbar",  method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control ou-minou",
+        name: "query",
+        id: "user_address",
+        placeholder: "Address",
+        autocomplete: "on"
+        %>
+        <button type="submit" class="search-button fas fa-search"></i></button>
+      <% end %>
+    </div>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-minou-right hidden-xs hidden-sm">
