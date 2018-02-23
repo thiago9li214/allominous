@@ -250,7 +250,7 @@ puts 'Creating minous...'
 
 # Minou 1
 url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519223923/plage.jpg'
-minou = Minou.new({
+minou1 = Minou.new({
     name:         'Puss in Boots',
     size:         'moyen',
     specie:       'chat',
@@ -260,12 +260,12 @@ minou = Minou.new({
     daily_price:  5,
     user_id:      user1.id
   })
-minou.remote_photo_url = url
-minou.save!
+minou1.remote_photo_url = url
+minou1.save!
 
 # Minou 2
 url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519223922/e%CC%81pe%CC%81e.jpg'
-minou = Minou.new({
+minou2 = Minou.new({
     name:         'Simba',
     size:         'petit',
     specie:       'lion',
@@ -275,12 +275,12 @@ minou = Minou.new({
     daily_price:  6,
     user_id:      user2.id
   })
-minou.remote_photo_url = url
-minou.save!
+minou2.remote_photo_url = url
+minou2.save!
 
 # Minou 3
 url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519223922/contrebois.jpg'
-minou = Minou.new({
+minou3 = Minou.new({
     name:         'Shere Khan',
     size:         'grand',
     specie:       'tigre',
@@ -290,12 +290,12 @@ minou = Minou.new({
     daily_price:  7,
     user_id:      user3.id
   })
-minou.remote_photo_url = url
-minou.save!
+minou3.remote_photo_url = url
+minou3.save!
 
 # Minou 4
 url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519226472/catcoueette.jpg'
-minou = Minou.new({
+minou4 = Minou.new({
     name:         'Grumpy Cat',
     size:         'moyen',
     specie:       'chat',
@@ -305,8 +305,8 @@ minou = Minou.new({
     daily_price:  9,
     user_id:      user4.id
   })
-minou.remote_photo_url = url
-minou.save!
+minou4.remote_photo_url = url
+minou4.save!
 
 
 Minou.create({
@@ -484,5 +484,56 @@ Minou.create({
 # Minou.create!(minous_attributes)
 puts 'Minous created!'
 
+
+puts 'Creating Rentals'
+
+rental = Rental.create({
+  rental_price:       20,
+ begin_date:          DateTime.new(2018,02,23),
+  end_date:           DateTime.new(2018,02,25),
+  status:             "request",
+  user_id:            user1.id,
+  minou_id:           minou1.id
+  })
+
+
+rental = Rental.create({
+  rental_price:       20,
+  begin_date:         DateTime.new(2018,02,23),
+  end_date:           DateTime.new(2018,02,27),
+  status:             "confirmed",
+  user_id:            user1.id,
+  minou_id:           minou2.id
+  })
+
+rental = Rental.create({
+  rental_price:       20,
+  begin_date:         DateTime.new(2018,02,14),
+  end_date:           DateTime.new(2018,02,15),
+  status:             "confirmed",
+  user_id:            user1.id,
+  minou_id:           minou3.id
+  })
+
+rental = Rental.create({
+  rental_price:       20,
+  begin_date:         DateTime.new(2017,12,14),
+  end_date:           DateTime.new(2017,12,31),
+  status:             "confirmed",
+  user_id:            user1.id,
+  minou_id:           minou4.id
+  })
+
+rental = Rental.create({
+  rental_price:       20,
+  begin_date:         DateTime.new(2018,01,10),
+  end_date:           DateTime.new(2018,02,02),
+  status:             "confirmed",
+  user_id:            user1.id,
+  minou_id:           minou2.id
+  })
+
+
+puts 'Rentals Created !'
 
 
