@@ -120,3 +120,18 @@
 .search-button {
   border: none;
 }
+
+.form-container-navbar {
+  border: 0px solid $light-gray !important;
+}
+
+.form-control {
+  box-shadow: none !important;
+  border: 1px solid $light-gray;
+}
+
+#navbar_search {
+  border: 1px solid $light-gray;
+  border-radius: 6px;
+  padding: 0 20px;
+}

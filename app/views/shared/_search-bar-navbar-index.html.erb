@@ -6,18 +6,19 @@
     <% end %>
 
     <div class="banner-search-navbar">
-
+      <div class="form-container-navbar">
       <%= form_tag minous_path, class: "form-inline form-navbar",  method: :get do %>
         <%= text_field_tag :query,
         params[:query],
         class: "form-control ou-minou",
         name: "query",
-        id: "user_address",
-        placeholder: "Address",
+        id: "navbar_search",
+        placeholder: "📍 Paris, Londres",
         autocomplete: "on"
         %>
         <button type="submit" class="search-button fas fa-search"></i></button>
       <% end %>
+    </div>
     </div>
   </div>
 
