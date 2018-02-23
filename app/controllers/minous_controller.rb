@@ -31,7 +31,7 @@ class MinousController < ApplicationController
       end
     end
     # @minous = Minou.all
-
+    render layout: "index_layout"
   end
 
   def show
