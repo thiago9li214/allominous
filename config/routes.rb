@@ -11,5 +11,4 @@ Rails.application.routes.draw do
   get 'minouboard', to: 'pages#minouboard'
   get 'emprunts', to: 'pages#emprunts'
   get 'historique', to: 'pages#historique'
-  get 'essai', to: 'pages#essai'
 end
