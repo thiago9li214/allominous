@@ -2,18 +2,18 @@
 <div class="wrapper">
 <div class="container">
   <div class="row">
-    <div class="col-md-offset-3 col-md-6">
+    <div class="col-sm-offset-4 col-sm-4">
 
-      <div class="minou-form">
-      <h2>Edit ton Minou</h2>
+      <h1>Edit ton Minou</h1>
+
       <%= render 'form', minou: @minou %>
 
+      <br>
 
-      <%= link_to 'Minoupause', @minou, method: :delete, data: { confirm: 'Are you sure?' }, class: "main-button" %>
+      <%= link_to 'Minoupause', @minou, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
-<%= link_to 'Mon Minou', @minou, class: "main-button" %> |
-<%= link_to 'Back', minous_path, class: "main-button" %>
   </div>
-  </div>
+<%= link_to 'Mon Minou', @minou %> |
+<%= link_to 'Back', minous_path %>
 </div>
 </div>
