@@ -14,11 +14,11 @@ User.destroy_all
 puts 'Creating users...'
 
 # User 1
-url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/g_face,c_thumb,w_200,h_200/v1519223923/plage_copie.jpg'
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519398152/DSC_0861-1.jpg'
 user1 = User.new( {
-    first_name:  'MinouLover',
-    last_name:   'KatFan',
-    email:       'minous@gmail.com',
+    first_name:  'Nathalie',
+    last_name:   'Roch',
+    email:       'pussycatdoll@gmail.com',
     password: 'azerty',
     address:      '16 villa Gaudelet, Paris'
   } )
@@ -61,7 +61,7 @@ user4 = User.new( {
 user4.remote_photo_url = url
 user4.save!
 
-url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519226474/man-with-blanket.jpg'
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519399291/1-hot-dudes-with-kittens.jpg'
 user5 = User.new( {
     first_name:  'Marcel',
     last_name:   'Pagnol',
@@ -72,7 +72,7 @@ user5 = User.new( {
 user5.remote_photo_url = url
 user5.save!
 
-url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519226474/man-with-blanket.jpg'
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519399284/1bg.jpg'
 user6 = User.new( {
     first_name:  'Emmanuel',
     last_name:   'Macron',
@@ -83,7 +83,7 @@ user6 = User.new( {
 user6.remote_photo_url = url
 user6.save!
 
-url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519226474/man-with-blanket.jpg'
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519399284/7bg.jpg'
 user7 = User.new( {
     first_name:  'Edison',
     last_name:   'Cavani',
@@ -94,7 +94,7 @@ user7 = User.new( {
 user7.remote_photo_url = url
 user7.save!
 
-url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519226474/man-with-blanket.jpg'
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519399701/10bg.jpg'
 user8 = User.new( {
     first_name:  'Neymar',
     last_name:   'Junior',
@@ -105,7 +105,7 @@ user8 = User.new( {
 user8.remote_photo_url = url
 user8.save!
 
-url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519226474/man-with-blanket.jpg'
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519399284/8bg.jpg'
 user9 = User.new( {
     first_name:  'Kyllian',
     last_name:   'Mbappe',
@@ -116,7 +116,7 @@ user9 = User.new( {
 user9.remote_photo_url = url
 user9.save!
 
-url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519226474/man-with-blanket.jpg'
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519399284/9bg.jpg'
 user10 = User.new( {
     first_name:  'Marco',
     last_name:   'Verrati',
@@ -127,7 +127,7 @@ user10 = User.new( {
 user10.remote_photo_url = url
 user10.save!
 
-url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519226474/man-with-blanket.jpg'
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519399701/14bg.jpg'
 user11 = User.new( {
     first_name:  'Thiago',
     last_name:   'Motta',
@@ -138,7 +138,7 @@ user11 = User.new( {
 user11.remote_photo_url = url
 user11.save!
 
-url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519226474/man-with-blanket.jpg'
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519399284/4bg.jpg'
 user12 = User.new( {
     first_name:  'Nabil',
     last_name:   'Fekir',
@@ -150,7 +150,7 @@ user12.remote_photo_url = url
 user12.save!
 
 
-url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519226474/man-with-blanket.jpg'
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519399284/6bg.jpg'
 user13 = User.new( {
     first_name:  'Anthony',
     last_name:   'Lopes',
@@ -161,7 +161,7 @@ user13 = User.new( {
 user13.remote_photo_url = url
 user13.save!
 
-url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519226474/man-with-blanket.jpg'
+url = 'http://res.cloudinary.com/dxjn2cmij/image/upload/v1519399701/12bg.jpg'
 user14 = User.new( {
     first_name:  'Mariano',
     last_name:   'Diaz',
@@ -489,7 +489,7 @@ puts 'Creating Rentals'
 
 rental = Rental.create({
   rental_price:       20,
- begin_date:          DateTime.new(2018,02,23),
+  begin_date:         DateTime.new(2018,02,23),
   end_date:           DateTime.new(2018,02,25),
   status:             "request",
   user_id:            user1.id,
@@ -498,7 +498,7 @@ rental = Rental.create({
 
 
 rental = Rental.create({
-  rental_price:       20,
+  rental_price:       48,
   begin_date:         DateTime.new(2018,02,23),
   end_date:           DateTime.new(2018,02,27),
   status:             "confirmed",
@@ -507,7 +507,7 @@ rental = Rental.create({
   })
 
 rental = Rental.create({
-  rental_price:       20,
+  rental_price:       8,
   begin_date:         DateTime.new(2018,02,14),
   end_date:           DateTime.new(2018,02,15),
   status:             "confirmed",
@@ -516,7 +516,7 @@ rental = Rental.create({
   })
 
 rental = Rental.create({
-  rental_price:       20,
+  rental_price:       140,
   begin_date:         DateTime.new(2017,12,14),
   end_date:           DateTime.new(2017,12,31),
   status:             "confirmed",
@@ -525,7 +525,7 @@ rental = Rental.create({
   })
 
 rental = Rental.create({
-  rental_price:       20,
+  rental_price:       246,
   begin_date:         DateTime.new(2018,01,10),
   end_date:           DateTime.new(2018,02,02),
   status:             "confirmed",
