@@ -1,28 +1,24 @@
+<!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
+<video autoplay loop id="video-background" muted plays-inline>
+  <source src="https://fpdl.vimeocdn.com/vimeo-prod-skyfire-std-us/01/3850/8/219250448/761773184.mp4?token=1519399563-0xdd82de0ca6979bf437a8b8920273a923832ac9d4" type="video/mp4">
+</video>
 
-<div class="banner" style="background-image: url(<%= image_path 'minouhome3.jpg'%>)">
-    <div class="banner-content">
+<div class="black_cover">
+  <div class="home-page-title">
       <h1>Bienvenue sur  Allominou</h1>
       <p>Accueillez un félin ne serait-ce qu'un temps</p>
-        <div class="rechercher-minou">
-          <%= link_to "Voir tous les minous", minous_path , class: "button-voir-minou btn btn-danger btn-lg" %>
-        </div>
-    </div>
-    <div class="banner-search">
-
-      <%= form_tag minous_path, class: "form-inline",  method: :get do %>
+      <div class="form-container">
+        <%= form_tag minous_path, class: "home-form",  method: :get do %>
         <%= text_field_tag :query,
         params[:query],
         class: "form-control ou-minou",
         name: "query",
         id: "user_address",
-        placeholder: "Address",
+        placeholder: "📍 Paris, Lyon, Marseille",
         autocomplete: "on"
         %>
-        <%= submit_tag("Rechercher", class: "button-search-minou btn btn-danger btn-lg") %>
+        <%= submit_tag("Rechercher", class: "button-search-minou") %>
       <% end %>
-      <!-- <input type="text" class="form-control ou-minou" placeholder="Où ça le minou ?"> -->
-      <!-- <input type="text" class="form-control ou-minou" placeholder="Quand ça le minou ?"> -->
+      </div>
     </div>
 </div>
-
-

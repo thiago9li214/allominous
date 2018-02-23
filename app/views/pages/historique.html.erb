@@ -25,7 +25,8 @@
               <p> <%= (rental.end_date - rental.begin_date).to_i %> jours</p>
             </div>
             <div class="message-content">
-              <p> L'un des meilleurs minous que j'ai connu, doux, attentionné, le poil soyeux, à reprendre de toute urgence même s'il peut être parfois irritable. </p>
+              <% hash_avis = {avis1: "L'un des meilleurs minous que j'ai connu, doux, attentionné, le poil soyeux, à reprendre de toute urgence même s'il peut être parfois irritable.", avis2: "Un Minou tout à fait exceptionnel, il a su répondre à toutes mes attentes. Un déchirement de le rendre à son propriétaire, quel chanceux !!😀😀😀", avis3: "Un Minou d'amour 😍😍😍", avis4: "Dur à apprivoiser mais une fois le lien de confiance atteint, la complicité est totale",avis5: "Chaud le minou chaud !" }%>
+              <p> <%= hash_avis.values.sample %></p>
             </div>
             <div class="message-status">
               <h2 id="minou-coin"> + <%= rental.rental_price %> </h2>

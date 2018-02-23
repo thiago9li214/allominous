@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
+    render layout: "homepage"
   end
 
   def minouboard
@@ -19,10 +20,6 @@ class PagesController < ApplicationController
     @date = Date.today
     @rentals = Rental.where("rentals.begin_date < ?", @date)
     @rentals.each { |rental| @sold += rental.rental_price }
-  end
-
-  def essai
-
   end
 
 end

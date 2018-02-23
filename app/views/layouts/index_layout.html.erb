@@ -10,7 +10,7 @@
     <%= stylesheet_pack_tag 'application' %> <!-- Import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render "shared/navbar" %>
+    <%= render "shared/search-bar-navbar-index" %>
     <%= render 'shared/flashes' %>
     <div class="page-content-margin-navbar">
       <%= yield %>
@@ -19,6 +19,5 @@
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag "map" %>
-
   </body>
 </html>
