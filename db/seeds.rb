@@ -489,7 +489,7 @@ puts 'Creating Rentals'
 
 rental = Rental.create({
   rental_price:       20,
- begin_date:          DateTime.new(2018,02,23),
+  begin_date:         DateTime.new(2018,02,23),
   end_date:           DateTime.new(2018,02,25),
   status:             "request",
   user_id:            user1.id,
@@ -498,7 +498,7 @@ rental = Rental.create({
 
 
 rental = Rental.create({
-  rental_price:       20,
+  rental_price:       48,
   begin_date:         DateTime.new(2018,02,23),
   end_date:           DateTime.new(2018,02,27),
   status:             "confirmed",
@@ -507,7 +507,7 @@ rental = Rental.create({
   })
 
 rental = Rental.create({
-  rental_price:       20,
+  rental_price:       8,
   begin_date:         DateTime.new(2018,02,14),
   end_date:           DateTime.new(2018,02,15),
   status:             "confirmed",
@@ -516,7 +516,7 @@ rental = Rental.create({
   })
 
 rental = Rental.create({
-  rental_price:       20,
+  rental_price:       140,
   begin_date:         DateTime.new(2017,12,14),
   end_date:           DateTime.new(2017,12,31),
   status:             "confirmed",
@@ -525,7 +525,7 @@ rental = Rental.create({
   })
 
 rental = Rental.create({
-  rental_price:       20,
+  rental_price:       246,
   begin_date:         DateTime.new(2018,01,10),
   end_date:           DateTime.new(2018,02,02),
   status:             "confirmed",
