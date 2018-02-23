@@ -10,7 +10,9 @@
     <%= stylesheet_pack_tag 'application' %> <!-- Import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <% if current_page?(controller: 'minous', action: 'index') %>
+    <% if current_page?(controller: 'pages', action: 'essai') %>
+    <%= render "shared/transparent_navbar" %>
+    <% elsif current_page?(controller: 'minous', action: 'index') %>
       <%= render "shared/search-bar-navbar-index" %>
     <% else %>
       <%= render "shared/navbar" %>

@@ -21,4 +21,8 @@ class PagesController < ApplicationController
     @rentals.each { |rental| @sold += rental.rental_price }
   end
 
+  def essai
+
+  end
+
 end
