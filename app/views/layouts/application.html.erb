@@ -10,7 +10,11 @@
     <%= stylesheet_pack_tag 'application' %> <!-- Import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <% if current_page?(controller: 'pages', action: 'essai') %>
+    <%= render "shared/transparent_navbar" %>
+    <% else %>
     <%= render "shared/navbar" %>
+    <% end %>
     <%= render 'shared/flashes' %>
     <div class="page-content-margin-navbar">
       <%= yield %>
