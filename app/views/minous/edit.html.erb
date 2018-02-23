@@ -9,11 +9,11 @@
       <%= render 'form', minou: @minou %>
 
 
-      <%= link_to 'Minoupause', @minou, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Minoupause', @minou, method: :delete, data: { confirm: 'Are you sure?' }, class: "main-button" %>
     </div>
+<%= link_to 'Mon Minou', @minou, class: "main-button" %> |
+<%= link_to 'Back', minous_path, class: "main-button" %>
   </div>
   </div>
-<%= link_to 'Mon Minou', @minou %> |
-<%= link_to 'Back', minous_path %>
 </div>
 </div>
