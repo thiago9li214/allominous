@@ -5,7 +5,7 @@ class MinousController < ApplicationController
   def index
     # Geoloc
     # recuperer address dans params
-     params[:query] != nil
+    if params[:query] != nil
       @users = User.near(params[:query], 50)
       id = @users.map { |u| u.id }
       @minous = Minou.where(user_id: id)
@@ -16,16 +16,16 @@ class MinousController < ApplicationController
           lng: minou.user.longitude
         }
       end
-    # else
-    #   @minous = Minou.all
+    else
+      @minous = Minou.all
 
-    #   @markers = @minous.map do |minou|
-    #     {
-    #       lat: minou.user.latitude,
-    #       lng: minou.user.longitude
-    #     }
-    #   end
-    # end
+      @markers = @minous.map do |minou|
+        {
+          lat: minou.user.latitude,
+          lng: minou.user.longitude
+        }
+      end
+    end
     # @minous = Minou.all
   end
 
