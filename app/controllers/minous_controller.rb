@@ -3,26 +3,42 @@ class MinousController < ApplicationController
 
 
   def index
-    # Geoloc
-    # recuperer address dans params
+    @minou_species = ["Toutes"] + Minou::SPECIES
+    @minou_personnalities = ["Tous"] + Minou::PERSONALITIES
+    # On recupere la requete de geoloc
     if params[:query] != nil
       @users = User.near(params[:query], 20)
-
       id = @users.map { |u| u.id }
-
+      @query = params[:query]
+      # Si filtre alors les minous sont differents
+      if params[:specie_param] && params[:personality]
+        if params[:specie_param] == "Toutes" && params[:personality] == "Tous"
+          @minous = Minou.where(user_id: id)
+        elsif params[:specie_param] == "Toutes"
+          @minous = Minou.where(personality: params[:personality], user_id: id)
+        elsif params[:personality] == "Tous"
+          @minous = Minou.where(specie: params[:specie_param], user_id: id)
+        else
+          @minous = Minou.where(specie: params[:specie_param], personality: params[:personality], user_id: id)
+        end
+      else
+      #   @minous = Minou.where(specie: params[:specie_param], personality: params[:personality], user_id: id)
+      # elsif params[:specie]
+      #   @minous = Minou.where(specie: params[:specie_param], user_id: id)
+      # elsif params[:personality]
+      #   @minous = Minou.where(personality: params[:personality], user_id: id)
+      # else
       @minous = Minou.where(user_id: id)
-
+      end
+      # end
       @markers = @minous.map do |minou|
         {
           lat: minou.user.latitude,
           lng: minou.user.longitude
         }
-      end
-
+        end
     else
       @minous = Minou.all
-
-
       @markers = @minous.map do |minou|
         {
           lat: minou.user.latitude,
@@ -31,7 +47,6 @@ class MinousController < ApplicationController
       end
     end
     # @minous = Minou.all
-    render layout: "index_layout"
   end
 
   def show

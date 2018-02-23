@@ -1,5 +1,35 @@
 <div class="wrapper">
   <div class="container">
+
+    <!-- Champs de filtre -->
+
+    <div class="filters">
+<!--       <div class="col-12 col-sm-6 col-md-4">
+ -->
+          <div class="filter">
+          <%= form_tag minous_path, method: :get, class: "form-inline" do %>
+          <%= hidden_field_tag :query, @query %>
+
+          <%= label_tag :specie_param, 'Espèce' %>
+          <%= select_tag :specie_param, options_for_select(@minou_species, params[:specie_param]), label: "Espèce", class: "form-control" %>
+          <%= label_tag :personality, 'Caractère' %>
+          <%= select_tag :personality, options_for_select(@minou_personnalities, params[:personality]), label: "Caractère",
+            class: "form-control" %>
+
+          </div>
+
+          <div class="filter">
+            <%= submit_tag 'Filtrer', class: "filter-button" %>
+            <%= link_to "Réinitialiser", minous_path(query: @query), class: "filter-button-reinitialiser "  %>
+
+          </div>
+        <% end %>
+ <!--      </div> -->
+    </div>
+   <p id="results"> <%= @minous.length %> résultats</p>
+
+
+
     <div class="row">
       <% @minous.each do |minou| %>
         <%= link_to minou_path(minou) do %>

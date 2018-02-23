@@ -1,0 +1,49 @@
+.filters {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  // align-self: center;
+}
+
+#results  {
+  margin: 0px 0px 0px 30px;
+  font-size: 14px;
+}
+
+.filter-button {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 60px;
+  color: white;
+  font-weight: normal;
+  border: none;
+  background-color: $blue;
+  font-size: 14px;
+}
+
+.filter-button:hover {
+  opacity: 0.8;
+  }
+
+.filter-button-reinitialiser {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 60px;
+  color: $blue;
+  font-weight: normal;
+  border: 1px solid $blue;
+  background-color: white;
+  font-size: 14px;
+}
+
+.filter-button-reinitialiser:hover {
+  opacity: 0.8;
+  }
+
