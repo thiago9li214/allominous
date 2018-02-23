@@ -4,6 +4,7 @@
   font-weight: normal;
 }
 
+
 .form-group {
   margin-left: 10px;
   font-size: 12px;
@@ -15,13 +16,49 @@
   padding: 2px 10px
 }
 
-
 .form-actions {
   text-align: center;
+  align-items: center;
+}
+.form-delete{
+  text-align: center;
+  align-items: center;
 }
 
 .avatar-form {
   background-color: $white;
+  text-align: center;
+}
+
+.mform {
+  display: flex;
+  background-color: white;
+  z-index: 10;
+  top: -40px;
+  flex: 0 0 25%;
+  flex-direction: column;
+  align-items: center;
+  margin: 70px 30px;
+  border-radius: 3px;
+  border: 1px solid $light-gray;
+  padding: 70px 30px 0px 30px;
+  position: relative;
+}
+
+.mform h2 {
+  color: $blue;
+  margin-top: 0px;
+  margin-bottom: 25px;
+
+}
+
+.mform .form-group {
+  margin-left: 0px;
+}
+
+.button-container{
+  align-items: center;
+  justify-content: center;
 }
 
 
