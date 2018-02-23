@@ -16,6 +16,8 @@ class PagesController < ApplicationController
     @rentals = current_user.rentals
     # Calcul du solde de minoucoins
     @sold = 0
+    @date = Date.today
+    @rentals = Rental.where("rentals.begin_date < ?", @date)
     @rentals.each { |rental| @sold += rental.rental_price }
   end
 
