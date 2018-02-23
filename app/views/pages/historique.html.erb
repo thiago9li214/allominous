@@ -11,7 +11,7 @@
       <!-- Boucle sur les rentals du user -->
       <ul class="inbox">
         <% @rentals.each do |rental| %>
-
+        <% if rental.end_date < Date.today%>
           <li class="message">
             <div class="avatar-box">
               <%= image_tag rental.minou.photo, height: 120, width: 120, crop: :center, class: "big-avatar" %>
@@ -32,7 +32,7 @@
               <h2>MinouCoins <%= image_tag "logo.png", height: 25 %> </h2>
             </div>
           </li>
-
+        <% end %>
         <% end %>
 
       </ul>
