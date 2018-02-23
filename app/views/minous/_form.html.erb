@@ -1,19 +1,50 @@
 
-<%= image_tag "logo.png", height: 100, width: 100, crop: :fill, class: "avatar-form" %>
+
 
 <%= simple_form_for(@minou) do |f| %>
   <%= f.error_notification %>
 
         <div class="form-inputs">
+          <div class="row">
           <%= f.input :name, label: "Nom :" %>
+
+          </div>
+          <div class="row">
+            <div class="col-md-6" style="padding-left: 0px; padding-right: 5px">
+
           <%= f.input :size, collection: Minou::SIZES, label: "Taille :" %>
+            </div>
+            <div class="col-md-6" style="padding-left: 5px; padding-right: 0px">
           <%= f.input :specie, collection: Minou::SPECIES, label: "Race :" %>
+
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-6" style="padding-left: 0px; padding-right: 5px">
+
           <%= f.input :age, label: "Age :" %>
+            </div>
+            <div class="col-md-6" style="padding-left: 5px; padding-right: 0px">
           <%= f.input :personality, collection: Minou::PERSONALITIES, label: "Personnalité :" %>
+
+            </div>
+
+          </div>
+          <div class="row">
+
           <%= f.input :description, label: "Description :" %>
+          </div>
+          <div class="row">
+
           <%= f.input :daily_price, label: "Prix par jour :" %>
+
+          </div>
+          <div class="row">
+
           <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
+          </div>
         </div>
 
         <div class="form-actions">
