@@ -1,3 +1,7 @@
+.margin-kill {
+  margin-top: 20px !important;
+}
+
 .filters {
   display: flex;
   justify-content: space-around;
@@ -10,6 +14,11 @@
   display: flex;
   align-items: center;
   // align-self: center;
+  label {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 10px;
+  }
 }
 
 #results  {
@@ -18,7 +27,8 @@
 }
 
 .filter-button {
-  padding: 10px 20px;
+  font-size: 12px !important;
+  padding: 5px 25px;
   margin: 10px;
   border-radius: 60px;
   color: white;
@@ -33,7 +43,8 @@
   }
 
 .filter-button-reinitialiser {
-  padding: 10px 20px;
+  padding: 5px 20px;
+  font-size: 12px !important;
   margin: 10px;
   border-radius: 60px;
   color: $blue;

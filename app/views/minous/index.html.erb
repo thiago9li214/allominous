@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="container">
+  <div class="container margin-kill">
 
     <!-- Champs de filtre -->
 
@@ -20,7 +20,7 @@
 
           <div class="filter">
             <%= submit_tag 'Filtrer', class: "filter-button" %>
-            <%= link_to "Réinitialiser", minous_path(query: @query), class: "filter-button-reinitialiser "  %>
+            <%= link_to "Effacer", minous_path(query: @query), class: "filter-button-reinitialiser "  %>
 
           </div>
         <% end %>
