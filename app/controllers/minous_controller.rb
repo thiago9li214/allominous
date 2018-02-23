@@ -3,15 +3,21 @@ class MinousController < ApplicationController
 
 
   def index
-    # Geoloc
-    # recuperer address dans params
+    # On recupere la requete de geoloc
     if params[:query] != nil
       @users = User.near(params[:query], 50)
-
       id = @users.map { |u| u.id }
-
-      @minous = Minou.where(user_id: id)
-
+      @query = params[:query]
+      # Si filtre alors les minous sont differents
+      if params[:specie] & params[:personality]
+        @minous = Minou.where(specie: params[:specie_param], personality: params[:personality], user_id: id)
+      elsif params[:specie]
+        @minous = Minou.where(specie: params[:specie_param], user_id: id)
+      elsif params[:personality]
+        @minous = Minou.where(personality: params[:personality], user_id: id)
+      else
+        @minous = Minou.where(user_id: id)
+      end
       @markers = @minous.map do |minou|
         {
           lat: minou.user.latitude,
