@@ -36,6 +36,7 @@
        </div>
        <% minou.rentals.select {|rental| rental.status == "request"}.each do |rental|%>
        <div class="accept_refuse_body">
+        <%= cl_image_tag rental.user.photo, height: 40, width: 40, crop: :fill, class: "avatar-little" %>
         <p id="accept_refuse_title"><%= rental.user.first_name %> veut accueillir <%= minou.name %></p>
         <p class="date_accept_refuse_rental">Du <%= rental.begin_date%> au <%= rental.end_date %></p>
         <%= simple_form_for rental do |f| %>
